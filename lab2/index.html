@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>JKP Webb Labb 2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="header clearfix">
+        <h3 class="text-muted">Labb 2</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">🕵️‍</span>
+            <input autofocus id="movie-search" type="text" class="form-control" placeholder="Search baby animals" aria-describedby="basic-addon1">
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">📖  &nbsp; Instructions</h3>
+            </div>
+            <div class="panel-body">
+              <ol>
+                <li>Search for a baby animal, e.g. "kitten"</li>
+                <li>Install <a href="https://nodejs.org/en/">Node</a> (even better to install through Homebrew if on OSX)</li>
+                <li>Up and running with a development server</li>
+                  <ol>
+                    <li><code>npm init</code> in root directory. Press enter through all the steps to accept defaults</li>
+                    <li>Familiarize with package.json and find the scripts section.</li>
+                    <li><code>npm install --save-dev http-server</code> (Adds a simple development server as a development dependency)</li>
+                    <li>Create a new key/value pair under "test", <code>"start": "http-server"</code></li>
+                    <li>Start the development server by typing <code>npm run start</code> in the terminal</li>
+                    <li>Go to <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a></li>
+                  </ol>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-lg-12">
+          <ul id="results" class="list-unstyled">
+            <!-- placeholder for list items, created with jQuery -->
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">📖  &nbsp; <code>if (timeLeft) { student.doMore(stuff); }</code></h3>
+            </div>
+            <div class="panel-body">
+              <pre>
+                var stuff = {
+                  1: 'Install lodash',
+                  2: 'Better search',
+                  3: 'Fade in search results with jQuery',
+                  4: 'Have fun!'
+                };
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /container -->
+
+    <script src="dist/bundle.js" charset="utf-8"></script>
+  </body>
+</html>
