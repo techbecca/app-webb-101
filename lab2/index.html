@@ -38,17 +38,16 @@
             </div>
             <div class="panel-body">
               <ol>
-                <li>Search for a baby animal, e.g. "kitten"</li>
-                <li>Install <a href="https://nodejs.org/en/">Node</a> (even better to install through Homebrew if on OSX)</li>
-                <li>Up and running with a development server</li>
+                <li>Delete all implementation in <code>search.js: performSearch</code></li>
+                <li>Delete the object <code>search.js: dataBlob</code></li>
+                <li>Make the code great again
                   <ol>
-                    <li><code>npm init</code> in root directory. Press enter through all the steps to accept defaults</li>
-                    <li>Familiarize with package.json and find the scripts section.</li>
-                    <li><code>npm install --save-dev http-server</code> (Adds a simple development server as a development dependency)</li>
-                    <li>Create a new key/value pair under "test", <code>"start": "http-server"</code></li>
-                    <li>Start the development server by typing <code>npm run start</code> in the terminal</li>
-                    <li>Go to <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a></li>
+                    <li>Import giphySearch module into search.js</li>
+                    <li>Call giphySearch from search.js: performSearch</li>
+                    <li>Implement missing functionality in giphySearch function inside giphySearch.js</li>
+
                   </ol>
+                </li>
               </ol>
             </div>
           </div>
@@ -57,9 +56,12 @@
       <hr>
       <div class="row">
         <div class="col-lg-12">
-          <ul id="results" class="list-unstyled">
-            <!-- placeholder for list items, created with jQuery -->
-          </ul>
+          <div id="app">
+            <ul id="results">
+              <!--  -->
+            </ul>
+            <!-- THIS IS WHERE WE WILL DO AWESOME STUFF -->
+          </div>
         </div>
       </div>
       <hr>
@@ -72,10 +74,7 @@
             <div class="panel-body">
               <pre>
                 var stuff = {
-                  1: 'Install lodash',
-                  2: 'Better search',
-                  3: 'Fade in search results with jQuery',
-                  4: 'Have fun!'
+                  TODO: WRITE ME!
                 };
               </pre>
             </div>

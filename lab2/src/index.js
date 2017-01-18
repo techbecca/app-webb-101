@@ -1,2 +1,2 @@
-const hej = "tjipp";
-console.log(`${hej} from es2015`)
+import { search } from './search';
+document.querySelector('#movie-search').addEventListener('keyup', search);
