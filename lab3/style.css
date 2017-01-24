@@ -1,0 +1,47 @@
+div {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.card {
+    height: 160px;
+    width: 160px;
+    position: relative;
+    -webkit-box-shadow: 9px 10px 11px -4px rgba(0,0,0,0.62);
+    -moz-box-shadow: 9px 10px 11px -4px rgba(0,0,0,0.62);
+    box-shadow: 9px 10px 11px -4px rgba(0,0,0,0.62);
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card.selected .img-container {
+    z-index: 10;
+}
+
+.card.found .img-container {
+    z-index: 10;
+}
+
+.card > :first-child {
+    z-index: 2;
+    background-color: #bebebe;
+    border: 2px solid black;
+}
+
+.card > :last-child {
+    z-index: 1;
+}
+
+.card > div {
+    position: absolute;
+    height: 160px;
+    width: 160px;
+}
+
+.img-container img {
+    width: 160px;
+    height: 160px;
+}
