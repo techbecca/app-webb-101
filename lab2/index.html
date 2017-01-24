@@ -25,6 +25,23 @@
             background: #232323;
             color: white;
         }
+        .lab-footer {
+            padding: 4rem 0;
+            margin-top: 4rem;
+            font-size: 85%;
+            text-align: center;
+            background-color: #f7f7f7
+        }
+        .lab-footer a {
+            font-weight: 500;
+            color: #464a4c
+        }
+        .lab-footer a:hover {
+            color: #0275d8
+        }
+        .lab-footer p {
+            margin-bottom: 0
+        }
 
     </style>
 </head>
@@ -61,16 +78,15 @@
                         <li>Let's try to run it again: <code>npm run start</code>. Things will happen. <span class="question">What and why?</span></li>
                         <li>Open <a href="http://localhost:8080/">http://localhost:8080/</a>.</li>
                         <li>Find our kittens. <span class="text-muted">We are now loading bundle.js as our <strong>only</strong> resource.</span></li>
-
-                        <li>Time to learn about modules! We should now search using giphy.js module.</li>
-                        <li>Delete all implementation in <code>search.js: performSearch</code></li>
-                        <li>Delete the object <code>search.js: dataBlob</code></li>
-                        <li>Make the code great again
+                        <li>Delete all implementation in <code>search.js ; performSearch</code> function.
+                            <span class="text-muted">Only that function though, not entire file. :D</span></li>
+                        <li>Delete the object <code>search.js: dataBlob</code>, we're not going to use it anymore. :)</li>
+                        <li>Make the code great again.
                             <ol>
-                                <li>Import giphySearch module into search.js<span class="question">aaaaa</span></li>
-                                <li>Call giphySearch from search.js: performSearch</li>
-                                <li>Implement missing functionality in giphySearch function inside giphySearch.js</li>
-                                <li></li>
+                                <li>Import giphySearch module into <code>search.js</code></li>
+                                <li>Call giphySearch from the now empty performSearch function in <code>search.js</code></li>
+                                <li>Implement missing functionality in giphySearch function inside <code>giphySearch.js</code></li>
+                                <li>Live long and prosper. <span class="question">Why all of a sudden are there baboons in our search result? Not one bit cute. Not. One. Bit.</span> </li>
                             </ol>
                         </li>
                     </ol>
@@ -98,9 +114,9 @@
                 </div>
                 <div class="panel-body">
               <pre>
-                var stuff = {
-                  TODO: WRITE ME!
-                };
+    var stuff = {
+      "sharingiscaring": "the art of helping a friend. doit."
+    };
               </pre>
                 </div>
             </div>
@@ -109,9 +125,14 @@
 
 </div> <!-- /container -->
 
-<div class="footer">
-    Made with love by...
-</div>
+<footer class="lab-footer text-muted">
+    <div class="container">
+        <p>
+            Messrs Y11e, Myntjaegaren, Krakendorph and Clownbaby666, Purveyors of Cringe and Aids in Coding are proud to present "THE BASICS OF WEB DEVELOPMENT"
+        </p>
+    </div>
+
+</footer>
 
 <script src="dist/bundle.js" charset="utf-8"></script>
 </body>
