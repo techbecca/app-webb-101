@@ -18,7 +18,7 @@ $(document).ready(function () {
             // go through each elements in the array for the datablog key
             for (var i = 0; i < hit.length; i++) {
                 var currentImage = hit[i];
-                var listElement = '<li><img src="' + currentImage + '" /></li>';
+                var listElement = '<li><img class="img-thumbnail" src="' + currentImage + '" /></li>';
                 // adds the list item to the DOM.
                 $("#results").append(listElement);
             }

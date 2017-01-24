@@ -12,6 +12,21 @@
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+    <style>
+        .instructions .question {
+            color: #0e0c9b;
+            font-family: 'Gloria Hallelujah', cursive;
+        }
+
+        .instructions code {
+            font-family: 'Cutive Mono', monospace;
+            background: #232323;
+            color: white;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -33,17 +48,25 @@
     <hr>
     <div class="row">
         <div class="col-sm-12">
-            <div class="panel panel-info">
+            <div class="panel panel-info instructions">
                 <div class="panel-heading">
                     <h3 class="panel-title">📖 &nbsp; Instructions</h3>
                 </div>
                 <div class="panel-body">
                     <ol>
+                        <li>This time we'll start with a server: <code>npm run start</code>.</li>
+                        <li>Oh no! Everything is broken. First, we need to get back to a working state.</li>
+                        <li>We need to install some dependencies. Open lab2 root in terminal and run <code>npm install</code>.
+                        <span class="question">What dependencies are installed?</span></li>
+                        <li>Let's try to run it again: <code>npm run start</code>. Things will happen. <span class="question">What and why?</span></li>
+                        <li>Open <a href="http://localhost:8080/">http://localhost:8080/</a>.</li>
+                        <li>Find our kittens. <span class="text-muted">We are now loading bundle.js as our <strong>only</strong> resource.</span></li>
+
                         <li>Delete all implementation in <code>search.js: performSearch</code></li>
                         <li>Delete the object <code>search.js: dataBlob</code></li>
                         <li>Make the code great again
                             <ol>
-                                <li>Import giphySearch module into search.js</li>
+                                <li>Import giphySearch module into search.js<span class="question">aaaaa</span></li>
                                 <li>Call giphySearch from search.js: performSearch</li>
                                 <li>Implement missing functionality in giphySearch function inside giphySearch.js</li>
                                 <li></li>
@@ -58,7 +81,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div id="app">
-                <ul id="results">
+                <ul id="results" class="list-unstyled">
                     <!--  -->
                 </ul>
                 <!-- THIS IS WHERE WE WILL DO AWESOME STUFF -->
@@ -84,6 +107,10 @@
     </div>
 
 </div> <!-- /container -->
+
+<div class="footer">
+    Made with love by...
+</div>
 
 <script src="dist/bundle.js" charset="utf-8"></script>
 </body>

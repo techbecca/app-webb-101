@@ -27,8 +27,10 @@ function search(event) {
     const value = event.target.value;
     performSearch(value).then(searchResult => {
         if (searchResult.length > 0) {
-            const listHTML = searchResult.map(result => `<li class='img-thumbnail'><img src=${result} /></li>`);
-            document.querySelector('#results').innerHTML = listHTML;
+            const resultNode = document.querySelector('#results');
+            resultNode.innerHTML = "";
+            const listHTML = searchResult.map(result => `<li><img class='img-thumbnail' src=${result} /></li>`)
+                .forEach(result => resultNode.innerHTML += result);
         }
     });
 }
