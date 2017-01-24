@@ -1,2 +1,2 @@
-import { search } from './search';
+import {search} from './search';
 document.querySelector('#movie-search').addEventListener('keyup', search);
