@@ -4,7 +4,7 @@
 
  */
 const GIPHY_API_KEY = 'dc6zaTOxFJmzC';
-const GIPHY_BASE_SEARCH_URL = 'http://api.giphy.com/v1/gifs/search?q='
+const GIPHY_BASE_SEARCH_URL = 'http://api.giphy.com/v1/gifs/search?q=';
 
 const giphySearch = (term = '') => {
     const urlEncodedTerm = encodeURIComponent(term);
@@ -15,19 +15,19 @@ const giphySearch = (term = '') => {
     // return fetch(urlToFetchWith)
     //   .then(result => result.json())
     //   .then(convertGiphyResultToImageArray);
-}
+};
 
 // converts to a format that our application understand, no need to modify. ignore for now.
 function convertGiphyResultToImageArray(giphySearchResult = {}) {
     /*
      giphySearchResult = {
-     data: [
-     "images": [
-     "original": {
-     "url": "some-url.gif"
-     }
-     ]
-     ]
+        data: [
+            "images": [
+                "original": {
+                    "url": "some-url.gif"
+                }
+            ]
+        ]
      }
      */
     const {data} = giphySearchResult;

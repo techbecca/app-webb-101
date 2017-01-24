@@ -3,13 +3,23 @@ import lodash from 'lodash';
 const dataBlob = {
     kitten: [
         "http://i.giphy.com/3oriO0OEd9QIDdllqo.gif",
-        "http://i.giphy.com/iNMz8LF8y3g4.gif"
+        "http://i.giphy.com/iNMz8LF8y3g4.gif",
+        "http://i.giphy.com/OmK8lulOMQ9XO.gif",
+        "http://i.giphy.com/11s7Ke7jcNxCHS.gif",
+        "http://i.giphy.com/IcXFEz3QvEmpG.gif",
+        "http://i.giphy.com/yFQ0ywscgobJK.gif"
     ],
     puppy: [
         "http://i.giphy.com/dp7QYhsdgN2Yo.gif",
-        "http://i.giphy.com/iNMz8LF8y3g4.gif"
+        "http://i.giphy.com/iNMz8LF8y3g4.gif",
+        "http://i.giphy.com/cdTUkj59dLFmg.gif"
     ],
-    bunny: ["http://i.giphy.com/10xUg8DdgQSs9i.gif"]
+    bunny: [
+        "http://i.giphy.com/10xUg8DdgQSs9i.gif",
+        "http://i.giphy.com/TT86traJyZRzq.gif",
+        "http://i.giphy.com/SeM5SGt3LLKRq.gif",
+        "http://i.giphy.com/871qwDxfSemEE.gif"
+    ]
 };
 
 // search accepts an event from the input field
