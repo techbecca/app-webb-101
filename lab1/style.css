@@ -16,3 +16,14 @@ img {
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
+
+.instructions .question {
+    color: #0e0c9b;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.instructions code {
+    font-family: 'Cutive Mono', monospace;
+    background: #232323;
+    color: white;
+}
