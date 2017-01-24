@@ -3,5 +3,9 @@
 ## Changes to search.js
 
 ```javascript
+import { giphySearch } from './giphy';
 
+function performSearch(searchTerm = '') {
+    return giphySearch(searchTerm);
+}
 ```
