@@ -42,9 +42,8 @@ class DomManager {
     }
 
     createCardNode(imgSrc, tileId) {
-
-        const godCard = document.createElement('div');
-        godCard.className = 'col-xs-3 grid-item';
+        const rootCardElement = document.createElement('div');
+        rootCardElement.className = 'col-xs-3 grid-item';
 
         const cardContainer = document.createElement('div');
         cardContainer.className = 'card';
@@ -62,10 +61,10 @@ class DomManager {
         image.setAttribute('src', imgSrc);
         imageElement.appendChild(image);
 
-        godCard.appendChild(cardContainer);
+        rootCardElement.appendChild(cardContainer);
         cardContainer.appendChild(backElement);
         cardContainer.appendChild(imageElement);
-        return godCard;
+        return rootCardElement;
     }
 
     setupBoard() {
