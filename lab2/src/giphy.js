@@ -10,7 +10,7 @@ const GIPHY_API_KEY = 'dc6zaTOxFJmzC';
 const GIPHY_BASE_SEARCH_URL = 'http://api.giphy.com/v1/gifs/search?q=';
 
 /**
- * Giphy specific search. 
+ * Giphy specific search.
  * We pre-built the url for you. Use it.
  * @param term The search term. E.g 'puppy'
  * @returns {Promise}
@@ -49,7 +49,7 @@ const giphySearch = (term = '') => {
  */
 function convertGiphyResultToImageArray(giphySearchResult = {}) {
     const {data} = giphySearchResult;
-    return giphySearchResult.map(img => img.images.original.url);
+    return data.map(img => img.images.original.url);
 }
 
 export {
