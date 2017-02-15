@@ -57,120 +57,141 @@
     </div>
     <hr>
 
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-road"></span>&nbsp; Scoreboard</h3>
+                </div>
+
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Current Score
+                            <span id="current-score"><!-- score --></span>
+                        </div>
+                        <div id="number-of-tries" class="col-sm-6">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="game"></div>
 
     <!--<div class="row">-->
-        <!--<div class="col-lg-12">-->
-            <!--<div id="grid">-->
-                <!--<div class="row">-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<br />-->
-                <!--<div class="row">-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<br />-->
-                <!--<div class="row">-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<br />-->
-                <!--<div class="row">-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-3 grid-item">-->
-                        <!--<div class="card">-->
-                            <!--<div class="back"></div>-->
-                            <!--<div class="img-container"></div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
+    <!--<div class="col-lg-12">-->
+    <!--<div id="grid">-->
+    <!--<div class="row">-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<br />-->
+    <!--<div class="row">-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<br />-->
+    <!--<div class="row">-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<br />-->
+    <!--<div class="row">-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-3 grid-item">-->
+    <!--<div class="card">-->
+    <!--<div class="back"></div>-->
+    <!--<div class="img-container"></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
     <!--</div>-->
     <hr>
     <div class="row">

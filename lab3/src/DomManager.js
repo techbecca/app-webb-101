@@ -10,7 +10,7 @@ class DomManager {
     // to make room for new, improveness stuffz
     clearNode() {
         this.clearListeners();
-        this.node.innerHTML = '';
+        this.node.textContent = '';
     }
 
     clearListeners() {
@@ -39,6 +39,11 @@ class DomManager {
                 cardElement.className = 'card found';
                 break;
         }
+    }
+
+    setScore(score) {
+        const scoreEl = document.getElementById('current-score');
+        scoreEl.textContent = score;
     }
 
     createCardNode(imgSrc, tileId) {
