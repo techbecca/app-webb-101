@@ -4,13 +4,17 @@ div {
     -webkit-box-sizing: border-box;
 }
 
+#game-over-panel {
+    display: none;
+}
+
 .card {
     height: 160px;
     width: 160px;
     position: relative;
-    -webkit-box-shadow: 9px 10px 11px -4px rgba(0,0,0,0.62);
-    -moz-box-shadow: 9px 10px 11px -4px rgba(0,0,0,0.62);
-    box-shadow: 9px 10px 11px -4px rgba(0,0,0,0.62);
+    /*-webkit-box-shadow: 9px 10px 11px -4px rgba(0,0,0,0.62);*/
+    /*-moz-box-shadow: 9px 10px 11px -4px rgba(0,0,0,0.62);*/
+    /*box-shadow: 9px 10px 11px -4px rgba(0,0,0,0.62);*/
 }
 
 .card:hover {
@@ -44,4 +48,32 @@ div {
 .img-container img {
     width: 160px;
     height: 160px;
+}
+
+.instructions .question {
+    color: #0e0c9b;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.instructions code {
+    font-family: 'Cutive Mono', monospace;
+    background: #232323;
+    color: white;
+}
+.lab-footer {
+    padding: 4rem 0;
+    margin-top: 4rem;
+    font-size: 85%;
+    text-align: center;
+    background-color: #f7f7f7
+}
+.lab-footer a {
+    font-weight: 500;
+    color: #464a4c
+}
+.lab-footer a:hover {
+    color: #0275d8
+}
+.lab-footer p {
+    margin-bottom: 0
 }

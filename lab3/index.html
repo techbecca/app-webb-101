@@ -8,30 +8,23 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>JKP Webb Labb 2</title>
+    <title>JKP Webb Labb 3</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <div class="container">
     <div class="header clearfix">
-        <h3 class="text-muted">Labb 2</h3>
+    <h3 class="text-muted">Labb 3</h3>
     </div>
 
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">🕵️‍</span>
-                <input autofocus id="movie-search" type="text" class="form-control" placeholder="Search baby animals"
-                       aria-describedby="basic-addon1">
-            </div>
-        </div>
-    </div>
-    <hr>
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-info">
@@ -39,22 +32,19 @@
                     <h3 class="panel-title">📖 &nbsp; Instructions</h3>
                 </div>
                 <div class="panel-body">
-                    <ol>
-                        <li>Delete all implementation in <code>search.js: performSearch</code></li>
-                        <li>Delete the object <code>search.js: dataBlob</code></li>
-                        <li>Make the code great again
-                            <ol>
-                                <li>Import giphySearch module into search.js</li>
-                                <li>Call giphySearch from search.js: performSearch</li>
-                                <li>Implement missing functionality in giphySearch function inside giphySearch.js</li>
-                                <li></li>
-                            </ol>
-                        </li>
+                    <ol class="instructions">
+                        <li><code>npm install</code></li>
+                        <li>Test your memory skillz!</li>
+                        <li>Spend a few minutes familiarizing yourself with the code <span class="question">Got any questions? Ask the handsome web guys!</span></li>
+                        <li>Hmm...it seems like something is wrong with the scoreboard. Start by implementing the scoreboard logic for displaying number of tiles matched by editing <code>GameManager.js</code> <span class="question">What is the purpose of using states in this application?</span></li>
+                        <li>Did you notice that number of tries is malfunctioning as well? See if you can fix it based on your awesome solution from the previous task.</li>
+                        <li>Inside <code>GameManager.js</code>, a method called <code>setGameOver</code> is just lying around, waiting for some love. Give it to it, gently, when appropriate ❤️ 😍</li>
                     </ol>
                 </div>
             </div>
         </div>
     </div>
+
     <hr>
 
     <div class="row">
@@ -67,132 +57,37 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-6">
-                            Current Score
-                            <span id="current-score"><!-- score --></span>
+                            Number of tiles matched:
+                            <span id="current-number-of-tiles-matched"><!-- numberOfTilesMatched --></span>
                         </div>
-                        <div id="number-of-tries" class="col-sm-6">
-
+                        <div class="col-sm-6">
+                            Number of tries:
+                            <span id="number-of-tries">0</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="row" id="game-over-panel">
+        <div class="col-sm-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-road"></span>&nbsp; GAME OVER!</h3>
+                </div>
+
+                <div class="panel-body">
+                    <div class="row">
+                        <!--TODO: PUT GAME SCORE STUFF HERE-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="game"></div>
 
-    <!--<div class="row">-->
-    <!--<div class="col-lg-12">-->
-    <!--<div id="grid">-->
-    <!--<div class="row">-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<br />-->
-    <!--<div class="row">-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<br />-->
-    <!--<div class="row">-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<br />-->
-    <!--<div class="row">-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-xs-3 grid-item">-->
-    <!--<div class="card">-->
-    <!--<div class="back"></div>-->
-    <!--<div class="img-container"></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
     <hr>
     <div class="row">
         <div class="col-sm-12">

@@ -16,10 +16,15 @@ const CARD_DICTIONARY = {
 	SOLVED: 2,
 };
 
+/*
+*  The module for the memory board.
+*  You should not have to make any changes to this module in order to complete the lab.
+* */
 class MemoryBoard {
-	constructor({ size = 4, kittenImages = kittens }, notifyAction) {
+	constructor({ size = 4, kittenImages = kittens }, notifyActionCallback = () => {
+	}) {
 		this.kittenImages = kittenImages;
-		this.notifyAction = notifyAction;
+		this.notifyActionCallback = notifyActionCallback;
 		this.state = this.setupState(size);
 		this.size = size;
 		this.kittenImageId = this.getShuffledTiles(size);
@@ -45,17 +50,29 @@ class MemoryBoard {
 			const currentCardFacingUp = this.getCurrentCardIndexFacingUp();
 			this.state[cardId] = CARD_DICTIONARY.FACE_UP;
 			const isMatch = this.kittenImageId[cardId] === this.kittenImageId[currentCardFacingUp];
+
 			if (isMatch) {
 				this.state[cardId] = CARD_DICTIONARY.SOLVED;
 				this.state[currentCardFacingUp] = CARD_DICTIONARY.SOLVED;
-				this.notifyAction({ type: 'SOLVED', data: {
-					card1: cardId,
-					card2: currentCardFacingUp,
-				}});
+				this.notifyActionCallback({
+					type: 'SOLVED', data: {
+						card1: cardId,
+						card2: currentCardFacingUp,
+					}
+				});
+
+				//	should finish?
+				let isGameOver = this.state.filter(item => item === CARD_DICTIONARY.FACE_DOWN).length === 0;
+				if (isGameOver) {
+					this.notifyActionCallback({
+						type: 'GAME_OVER'
+					});
+				}
 			}
+
 		} else {
 			// user clicks a third card.
-			this.notifyAction({
+			this.notifyActionCallback({
 				type: 'NO_MATCH'
 			});
 			this.turnBackAllCardsFacingUp();
