@@ -1,4 +1,5 @@
 import _ from "lodash";
+import { GAME_STATE } from './gameState';
 export const kittens = [
 	{ id: 0, url: "http://i.giphy.com/3oriO0OEd9QIDdllqo.gif" },
 	{ id: 1, url: "http://i.giphy.com/iNMz8LF8y3g4.gif" },
@@ -17,9 +18,10 @@ const CARD_DICTIONARY = {
 };
 
 /*
-*  The module for the memory board.
-*  You should not have to make any changes to this module in order to complete the lab.
-* */
+ *  The module for the memory board.
+ *  You should not have to make any changes to this module in order to complete the lab.
+ * */
+
 class MemoryBoard {
 	constructor({ size = 4, kittenImages = kittens }, notifyActionCallback = () => {
 	}) {
@@ -28,6 +30,9 @@ class MemoryBoard {
 		this.state = this.setupState(size);
 		this.size = size;
 		this.kittenImageId = this.getShuffledTiles(size);
+		this.notifyGameStarted = _.once(() => {
+			this.notifyActionCallback({ type: GAME_STATE.GAME_STARTED });
+		});
 	}
 
 	setupState(size) {
@@ -40,6 +45,7 @@ class MemoryBoard {
 	}
 
 	handleClicked(cardId) {
+		this.notifyGameStarted();
 		if (this.state[cardId] !== CARD_DICTIONARY.FACE_DOWN) {
 			return;
 		}
@@ -55,7 +61,7 @@ class MemoryBoard {
 				this.state[cardId] = CARD_DICTIONARY.SOLVED;
 				this.state[currentCardFacingUp] = CARD_DICTIONARY.SOLVED;
 				this.notifyActionCallback({
-					type: 'SOLVED', data: {
+					type: GAME_STATE.SOLVED, data: {
 						card1: cardId,
 						card2: currentCardFacingUp,
 					}
@@ -65,7 +71,7 @@ class MemoryBoard {
 				let isGameOver = this.state.filter(item => item === CARD_DICTIONARY.FACE_DOWN).length === 0;
 				if (isGameOver) {
 					this.notifyActionCallback({
-						type: 'GAME_OVER'
+						type: GAME_STATE.GAME_OVER
 					});
 				}
 			}
@@ -73,7 +79,7 @@ class MemoryBoard {
 		} else {
 			// user clicks a third card.
 			this.notifyActionCallback({
-				type: 'NO_MATCH'
+				type: GAME_STATE.NO_MATCH
 			});
 			this.turnBackAllCardsFacingUp();
 			this.state[cardId] = CARD_DICTIONARY.FACE_UP;
