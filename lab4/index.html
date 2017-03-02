@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>JKP Webb Labb 4</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header clearfix">
+    <h3 class="text-muted">Labb 4</h3>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">📖 &nbsp; Instructions</h3>
+                </div>
+                <div class="panel-body">
+                    <ol class="instructions">
+                        <li>As usual, run <code>npm install</code> to install the necessary dependencies.</li>
+                        <li>Notice the added <i>__tests__</i> folder in the <i>src</i> directory.</li>
+                        <li>run <code>npm run test:coverage</code> <span class="question"> What do you see?</span></li>
+                        <li>Locate the coverage directory in the root folder. Inside the <i>lcov-report</i> folder, open index.html.<span class="question"> Are there any missing tests?</span></li>
+                        <li>The tests are written for the <a href="https://facebook.github.io/jest/">Jest</a> testing framework. Take a moment to familiarize yourself with the <i>*.test.js</i> files in the <i>__tests__</i> folder <span class="question"> Why is it important to test JavaScript?</span></li>
+                        <li>Implement the missing tests in <i>Memoryboard.js</i>. Reload your coverage page in the browser to see your status. Or look in the terminal for a quick hint on your progress.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-road"></span>&nbsp; Scoreboard</h3>
+                </div>
+
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            Number of tiles matched:
+                            <span id="current-number-of-tiles-matched"><!-- numberOfTilesMatched --></span>
+                        </div>
+                        <div class="col-sm-6">
+                            Number of tries:
+                            <span id="number-of-tries">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="game-over-panel">
+        <div class="col-sm-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-road"></span>&nbsp; GAME OVER!</h3>
+                </div>
+
+                <div class="panel-body">
+                    <div class="row">
+                        <!--TODO: PUT GAME SCORE STUFF HERE-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="game"></div>
+
+    <hr>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">📖 &nbsp; <code>if (timeLeft) { student.doMore(stuff); }</code></h3>
+                </div>
+                <div class="panel-body">
+              <pre>
+                const stuff = {
+                  isThisIt: {
+                      forToday: true,
+                      forLife: false,
+                  },
+                  drawBalloon() { return new Balloon({ color: 'red', target: 'whiteboard' }) },
+                  celebrateTeachersForAJobWellDoneForPaymentRaise: true
+                };
+              </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- /container -->
+
+<script src="dist/bundle.js" charset="utf-8"></script>
+</body>
+</html>
