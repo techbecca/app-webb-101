@@ -26,6 +26,15 @@ const giphySearch = (term = '') => {
 
     console.log("fetching data from giphySearch module", urlToFetchWith);
     // TODO: Use fetch api to search with given urlToFetchWith variable.
+    /*
+    SAMPLE FETCH
+    fetch(myRequestUrl).then(function(response) {
+        return response.json().then(function(jsonResponse) {
+          // process your JSON further
+          // if only there was a function in this file that could help me! :D
+        });
+    });
+    */
     // Read more about the fetch API at https://developer.mozilla.org/en/docs/Web/API/Fetch_API
 };
 

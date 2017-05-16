@@ -75,14 +75,15 @@
                         <li>Oh no! Everything is broken. First, we need to get back to a working state.</li>
                         <li>We need to install some dependencies. Open lab2 root in terminal and run <code>npm install</code>.
                         <span class="question">What dependencies are installed?</span></li>
-                        <li>Let's try to run it again: <code>npm run start</code>. Things will happen. <span class="question">What and why?</span></li>
+                        <li>Let's try to run it again: <code>npm run start</code>. Things will happen. <span class="question">What?</span></li>
                         <li>Open <a href="http://localhost:8080/">http://localhost:8080/</a>.</li>
                         <li>Find our kittens. <span class="text-muted">We are now loading bundle.js as our <strong>only</strong> resource.</span></li>
-                        <li>Delete all implementation in <code>search.js ; performSearch</code> function.
-                            <span class="text-muted">Only that function though, not entire file. :D</span></li>
-                        <li>Delete the object <code>search.js: dataBlob</code>, we're not going to use it anymore. :)</li>
+                        <li>Delete all implementation <b>inside the function</b> <code>search.js -> performSearch</code>.
+                            <span class="text-muted">Only the content, not the entire function. :D</span></li>
+                        <li>Delete the object <code>search.js -> dataBlob</code>, we're not going to use it anymore. :)</li>
                         <li>Make the code great again.
                             <ol>
+                                <li>Read all the comments inside <code>giphy.js</code></li>
                                 <li>Import giphySearch module into <code>search.js</code></li>
                                 <li>Call giphySearch from the now empty performSearch function in <code>search.js</code></li>
                                 <li>Implement missing functionality in giphySearch function inside <code>giphySearch.js</code></li>
