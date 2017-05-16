@@ -105,8 +105,8 @@ class DomManager {
     }
 
 	showGameOver(gameState) {
-    const gameOverEl = document.getElementById('game-over-panel');
-    gameOverEl.style.display = 'block';
+        const gameOverEl = document.getElementById('game-over-panel');
+        gameOverEl.style.display = 'block';
 	}
 }
 
