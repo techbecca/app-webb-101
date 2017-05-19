@@ -1,5 +1,6 @@
 ## LAB3 notification solution
 ```javascript
+import { GAME_STATE } from './gameState';
 notifyAction(action) {
     /*
         action structure:
@@ -14,7 +15,7 @@ notifyAction(action) {
             break;
         }
         case GAME_STATE.GAME_STARTED: {
-                    this.stateGameTimer();
+                    this.startGameTimer();
                 }
         case GAME_STATE.GAME_OVER: {
             this.domManager.showGameOver(this.state);
