@@ -105,7 +105,11 @@ class DomManager {
     }
 
 	showGameOver(gameState) {
+        console.log("GAME OVER!", gameState);
+
         const gameOverEl = document.getElementById('game-over-panel');
+        // What would a memory and web master like you do here?
+        
         gameOverEl.style.display = 'block';
 	}
 }

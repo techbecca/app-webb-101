@@ -25,6 +25,7 @@ const giphySearch = (term = '') => {
     }
 
     console.log("fetching data from giphySearch module", urlToFetchWith);
+
     // TODO: Use fetch api to search with given urlToFetchWith variable.
     /*
     SAMPLE FETCH
@@ -35,7 +36,8 @@ const giphySearch = (term = '') => {
         });
     });
     */
-    // Read more about the fetch API at https://developer.mozilla.org/en/docs/Web/API/Fetch_API
+    // Read more about the fetch API at https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
 };
 
 

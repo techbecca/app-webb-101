@@ -4,13 +4,16 @@ const generateKittens = (size) => _.range(0, size)
 	.map(id => ({ url: `kitten_${id}.jpg`, id }));
 
 describe('shuffling', () => {
+
 	it('when size = 4', () => {
 		const board = new MemoryBoard({ size: 4, kittenImages: generateKittens(8) });
 		expect(board.kittenImageId.length).toEqual(16);
 	});
+
 	it('it should throw an error when size = 5', () => {
 		expect(() => new MemoryBoard({ size: 5, kittenImages: generateKittens(6) })).toThrow();
 	});
+
 	it('when size = 6', () => {
 		const board = new MemoryBoard({ size: 6, kittenImages: generateKittens(18) });
 		expect(board.kittenImageId.length).toEqual(36);
@@ -53,7 +56,7 @@ describe('card flipping logic', () => {
 // TODO: Implement this!
 describe('getCardState()', () => {
 	it('should return the given cardId from the state', () => {
-	    // given
+	  // given
 		// when
 		// then
 	})
@@ -61,7 +64,7 @@ describe('getCardState()', () => {
 
 describe('turnBackAllCardsFacingUp()', () => {
 	it('should turn back all cards facing up', () => {
-	    // given
+	   // given
 		// when
 		// then
 	});
