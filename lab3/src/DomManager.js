@@ -108,8 +108,8 @@ class DomManager {
         console.log("GAME OVER!", gameState);
 
         const gameOverEl = document.getElementById('game-over-panel');
-        // What would a memory and web master like you do here?
-        
+        // Can you find this element in index.html? Maybe you need to add some stuff to it's body... ;) 
+
         gameOverEl.style.display = 'block';
 	}
 }

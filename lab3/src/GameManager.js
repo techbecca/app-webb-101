@@ -31,7 +31,7 @@ class GameManager {
 		 }
 		 */
 		console.log(action.type, action);
-		// TODO: your implementation of step 4 & 5 COULD go here. ;)
+		// TODO: your implementation of step 8 & 9 COULD go here. ;)
 	}
 
 }
