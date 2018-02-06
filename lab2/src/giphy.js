@@ -16,27 +16,30 @@ const GIPHY_BASE_SEARCH_URL = 'http://api.giphy.com/v1/gifs/search?q=';
  * @returns {Promise}
  */
 const giphySearch = (term = '') => {
-    const urlEncodedTerm = encodeURIComponent(term);
-    const urlToFetchWith = GIPHY_BASE_SEARCH_URL + urlEncodedTerm + '&api_key=' + GIPHY_API_KEY;
+	const urlEncodedTerm = encodeURIComponent(term);
+	const URL_TO_FETCH_WITH = GIPHY_BASE_SEARCH_URL + urlEncodedTerm + '&api_key=' + GIPHY_API_KEY;
 
-    if (term.length <= 2) {
-        // Nothing to search for, return emppty array promise
-        return new Promise((resolve, reject) => resolve([]));
-    }
+	if (term.length <= 2) {
+		// Nothing to search for, return emppty array promise
+		return new Promise((resolve, reject) => resolve([]));
+	}
 
-    console.log("fetching data from giphySearch module", urlToFetchWith);
+	console.log('fetching data from giphySearch module', URL_TO_FETCH_WITH);
 
-    // TODO: Use fetch api to search with given urlToFetchWith variable.
-    /*
-    SAMPLE FETCH
-    fetch(myRequestUrl).then(function(response) {
-        return response.json().then(function(jsonResponse) {
-          // process your JSON further
-          // if only there was a function in this file that could help me! :D
-        });
-    });
-    */
-    // Read more about the fetch API at https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+	// TODO: Use fetch api to search with given urlToFetchWith variable.
+	/*
+	SAMPLE FETCH
+	fetch(someRequestUrl)
+		.then((response) => {
+				// fetch api needs to return the content type. in this case we want JSON.
+				return response.json();
+		})
+		.then((jsonResponse) => {
+			// process your JSON further
+			// if only there is a function in this file that could help me! :D
+		});
+	*/
+	// Read more about the fetch API at https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
 };
 
@@ -59,10 +62,10 @@ const giphySearch = (term = '') => {
  * @returns Array of Strings (the image urls)
  */
 function convertGiphyResultToImageArray(giphySearchResult = {}) {
-    const {data} = giphySearchResult;
-    return data.map(img => img.images.original.url);
+	const { data } = giphySearchResult;
+	return data.map(img => img.images.original.url);
 }
 
 export {
-    giphySearch
+	giphySearch
 }
