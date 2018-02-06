@@ -23,6 +23,17 @@ const CARD_DICTIONARY = {
  *  You should not have to make any changes to this module in order to complete the lab.
  * */
 
+ export const getShuffledTiles = (size, images) => {
+     if (size % 2 !== 0) {
+       throw new Error('size cannot be uneven numbers, would make up for some really terrible pairing, l0l');
+     }
+     if ((size * size) / 2 > images.length) {
+       throw new Error('insufficient kittens provided to make more cats');
+     }
+     const arr = _.range(0, Math.floor((size * size) / 2));
+     return _.shuffle([...arr, ...arr]);
+ }
+
 class MemoryBoard {
   constructor({ size = 4, kittenImages = kittens }, notifyActionCallback = () => {
   }) {
@@ -30,7 +41,7 @@ class MemoryBoard {
     this.notifyActionCallback = notifyActionCallback;
     this.state = MemoryBoard.setupState(size);
     this.size = size;
-    this.kittenImageId = this.getShuffledTiles(size);
+    this.kittenImageId = getShuffledTiles(size, kittenImages);
     this.notifyGameStarted = _.once(() => {
       this.notifyActionCallback({ type: GAME_STATE.GAME_STARTED });
     });
@@ -104,17 +115,6 @@ class MemoryBoard {
 
   getNumberOfCardsFacingUp() {
     return this.state.filter(item => item === CARD_DICTIONARY.FACE_UP).length;
-  }
-
-  getShuffledTiles(size) {
-    if (size % 2 !== 0) {
-      throw new Error('size cannot be uneven numbers, would make up for some really terrible pairing, l0l');
-    }
-    if ((size * size) / 2 > this.kittenImages.length) {
-      throw new Error('insufficient kittens provided to make more cats');
-    }
-    const arr = _.range(0, Math.floor((size * size) / 2));
-    return _.shuffle([...arr, ...arr]);
   }
 
   getKittenImage(kittenImageId = 0) {
