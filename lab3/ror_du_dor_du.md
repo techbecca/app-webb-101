@@ -1,4 +1,4 @@
-## LAB3 notification solution
+## FACIT LAB 3
 
 ## GameManager.js
 ```javascript

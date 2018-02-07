@@ -1,4 +1,4 @@
-# LAB4 notification solution
+# FACIT LAB 4
 
 ## MemoryBoard.test.js
 ```javascript
