@@ -53,7 +53,8 @@ describe('getCurrentCardIndexFacingUp()', () => {
 
 });
 
-// TODO: Implement this!
+// TODO: Implement these failing tests!
+
 describe('getKittenImage(id)', () => {
 	it('should return kitten with given id', () => {
 	   // given
@@ -67,25 +68,65 @@ describe('getKittenImage(id)', () => {
 });
 
 describe('getCardState(cardId)', () => {
-	it('should return the given flip state of a cardId from the state', () => {
-        // given
+	
+	const unflippedCard = 0;
+	const flippedCard = 1;
+	
+	it('should return an unflipped card when the board is created', () => {
+		// given
         // const board = new MemoryBoard(...);
-        // when
+		// when
+		// const actual = board.getCardState(...);
 		// then
-        // const actual = board.getCardState(...);
-        // expect(actual).toEqual(...)
+        // expect(actual).toEqual(unflippedCard);
         expect(true).toEqual(false);
-	})
+	});
+
+	it('should return a flipped card when the card has been clicked', () => {
+		// given
+		const cardId = 4;
+        // const board = ...
+		// when
+		// clicking on card with given cardId...
+		// then
+        // expect(actual).toEqual(flippedCard);
+        expect(true).toEqual(false);
+	});
 });
 
 describe('getShuffledTiles(size, images)', () => {
-    it('shuffles', () => {
+	
+	it('shuffles the kittens array', () => {
         // given
             // const kittens = generateKittens(...);
         // when
             // shuffling...
         // then
             // expect(...).not.toEqual(kittens);
-        expect(true).toEqual(false);
-    })
+        expect(true).not.toEqual(true);
+	});
+	
+	it('throws an error if board is too large for the kittens array', () => {
+		// given
+			const hugeSizeBoard = 16;
+			const justAFewKittens = 4; 
+            // const kittens = ...
+		// when
+			// try {
+			// 	shuffling
+			// } catch (e) {
+			// 	//then
+			// 	expect(e.message).toEqual(...);
+			// }
+			expect(true).toEqual(false);
+	});
+
+	it('throws an error when trying to create a board of uneaven size', () => {
+		// given
+			const size = 5;
+		// when
+			// You got this now, right!? :)
+		//then
+		expect(true).toEqual(false);
+	});
 })
