@@ -1,4 +1,4 @@
-# Steps required to complete this assignment
+# FACIT LAB 2
 
 ## Changes to search.js
 
@@ -23,10 +23,11 @@ const giphySearch = (term = '') => {
         return new Promise((resolve, reject) => resolve([]));
     }
 
-    console.log("fetching data from giphySearch module", urlToFetchWith);
+    console.log("fetching data from giphySearch module", URL_TO_FETCH_WITH);
 
-    return fetch(urlToFetchWith)
+    return fetch(URL_TO_FETCH_WITH)
       .then(result => result.json())
-      .then(data => convertGiphyResultToImageArray(data));
+      .then(data => convertGiphyResultToImageArray(data))
+      .catch(error => console.error(`Error from fetching giphy images: ${error}`));
 };
 ```

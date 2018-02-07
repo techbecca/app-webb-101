@@ -36,11 +36,10 @@ const giphySearch = (term = '') => {
 		})
 		.then((jsonResponse) => {
 			// process your JSON further
-			// if only there is a function in this file that could help me! :D
+			// if only there is a function in this file that could help me...
 		});
 	*/
 	// Read more about the fetch API at https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-
 };
 
 
