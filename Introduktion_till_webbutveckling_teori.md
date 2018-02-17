@@ -244,17 +244,16 @@ function wazzupInTheHood() {
 			reject(new Error('You outta here, fool'));
 		}
 	});
-
 	return promise;
-
-	//Client
-	wazzupInTheHood()
-		.then(wallet => buyBabyClothes(wallet))
-		.else(error => {
-			robBank();
-			console.error(`Error in the hood: ${error}`);
-		});
 }
+
+//Client
+wazzupInTheHood()
+	.then(wallet => buyBabyClothes(wallet))
+	.else(error => {
+		robBank();
+		console.error(`Error in the hood: ${error}`);
+	});
 ```  
 
 Promises har 3 states:
@@ -442,11 +441,11 @@ Nu för tiden har vi bra stöd för att koda web!
 ### Vad är skillnaden på en webbutvecklare och en webbdesigner?
 ### Hur lär man sig webbutveckling?
 ### Tips på bra kunskapskällor!
-* egghead.io
-* udemy.com
-* wesbos.com
-* safaribooksonline.com
-* medium.com
+* [egghead.io](egghead.io)
+* [udemy.com](udemy.com)
+* [wesbos.com](wesbos.com)
+* [safaribooksonline.com](safaribooksonline.com)
+* [medium.com](medium.com)
  
 
 
