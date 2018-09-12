@@ -1,6 +1,6 @@
 import findKey from 'lodash/findKey';
 
-const dataBlob = {
+const staticSearchResult = {
     kitten: [
         "http://i.giphy.com/3oriO0OEd9QIDdllqo.gif",
         "http://i.giphy.com/iNMz8LF8y3g4.gif",
@@ -38,6 +38,9 @@ export const search = (event) => {
                                 .map(result => `<li><img class='img-thumbnail' src=${result} /></li>`)
                                 .forEach(result => resultNode.innerHTML += result);
         }
+    })
+    .catch(err => {
+        console.err("Error from performing sarch", err);
     });
 }
 
@@ -48,12 +51,14 @@ export const search = (event) => {
  * @returns {Promise}
  */
 function performSearch(searchTerm = '') {
-    const findKeyFromDataBlob = findKey(dataBlob, (item, index) => index === searchTerm);
+    const findKeyFromStaticSearchResult = findKey(staticSearchResult, (item, index) => index === searchTerm);
+    // ----------------------------------------------------------
     // since our final application uses fetch api and promises
     // we use promises here to keep the same interface for all the helper functions
+    // ----------------------------------------------------------
     return new Promise((resolve, reject) => {
-        if (findKeyFromDataBlob) {
-            resolve(dataBlob[findKeyFromDataBlob]);
+        if (findKeyFromStaticSearchResult) {
+            resolve(staticSearchResult[findKeyFromStaticSearchResult]);
         }
         resolve([]);
     })
