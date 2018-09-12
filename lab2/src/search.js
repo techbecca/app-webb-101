@@ -28,14 +28,15 @@ const dataBlob = {
  * OBS: You should not have to change this function.
  * @param event
  */
-function search(event) {
+export const search = (event) => {
     const value = event.target.value;
     performSearch(value).then(searchResult => {
         if (searchResult.length > 0) {
             const resultNode = document.querySelector('#results');
             resultNode.innerHTML = "";
-            const listHTML = searchResult.map(result => `<li><img class='img-thumbnail' src=${result} /></li>`)
-                .forEach(result => resultNode.innerHTML += result);
+            const listHTML = searchResult
+                                .map(result => `<li><img class='img-thumbnail' src=${result} /></li>`)
+                                .forEach(result => resultNode.innerHTML += result);
         }
     });
 }
@@ -60,6 +61,3 @@ function performSearch(searchTerm = '') {
 
 // This is the API we export.
 // What's the difference between named and unnamed exports?
-export {
-    search
-};
