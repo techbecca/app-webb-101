@@ -1,4 +1,4 @@
 import 'babel-polyfill';
-import 'promise-polyfill/src/polyfill';
+import Promise from 'promise-polyfill';
 import {search} from './search';
 document.querySelector('#animal-search').addEventListener('keyup', search);

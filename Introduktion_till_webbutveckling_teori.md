@@ -352,9 +352,9 @@ _Two classes, components or modules are coupled when at least one of them uses t
 * Vi prenumererar på förändringar som kan påverka vårt state som vi lyssnar på. Jämför _Observer_ och _State_ pattern från den klassiska boken ”Design Patterns”.
 
 ### State Management, tekniker
-	* Redux & Flux (speciellt bra om man jobbar med React)
-	* RxJS (reactive programming, även applicerbart på Java)
-	* VueX (om man jobbar med Vue.js)
+* Redux & Flux (speciellt bra om man jobbar med React)
+* RxJS (reactive programming, även applicerbart på Java)
+* VueX (om man jobbar med Vue.js)
 	
 ### Byggverktyg
 * Webpack (utan tvekan mest populärt just nu)
