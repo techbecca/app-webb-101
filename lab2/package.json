@@ -10,14 +10,15 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "babel-core": "^6.21.0",
-        "babel-loader": "^6.2.10",
-        "babel-preset-es2015": "^6.18.0",
-        "webpack": "^1.14.0",
-        "webpack-dev-server": "^1.16.2"
+        "babel-core": "6.21.0",
+        "babel-loader": "6.2.10",
+        "babel-preset-es2015": "6.18.0",
+        "promise-polyfill": "8.1.0",
+        "webpack": "1.14.0",
+        "webpack-dev-server": "1.16.2"
     },
     "dependencies": {
-        "babel-polyfill": "^6.26.0",
-        "lodash": "^4.17.4"
+        "babel-polyfill": "6.26.0",
+        "lodash": "4.17.4"
     }
 }
