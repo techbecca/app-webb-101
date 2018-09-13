@@ -1,17 +1,18 @@
 module.exports = {
-    entry: {
-        main: './src/index.js'
-    },
-    output: {
-        filename: './dist/bundle.js'
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                exclude: /(node_modules)/,
-                loader: 'babel'
-            }
-        ]
-    }
-}
+	entry: {
+		main: './src/index.js'
+	},
+	output: {
+		filename: './dist/bundle.js'
+	},
+	module: {
+		rules: [
+			{
+				test: /\.js$/,
+				exclude: /(node_modules)/,
+				loader: 'babel-loader'
+			}
+
+		]
+	}
+};
