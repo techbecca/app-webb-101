@@ -30,18 +30,19 @@ const staticSearchResult = {
  */
 export const search = (event) => {
     const value = event.target.value;
-    performSearch(value).then(searchResult => {
-        if (searchResult.length > 0) {
-            const resultNode = document.querySelector('#results');
-            resultNode.innerHTML = "";
-            const listHTML = searchResult
-                                .map(result => `<li><img class='img-thumbnail' src=${result} /></li>`)
-                                .forEach(result => resultNode.innerHTML += result);
-        }
-    })
-    .catch(err => {
-        console.err("Error from performing sarch", err);
-    });
+    performSearch(value)
+        .then(searchResult => {
+            if (searchResult.length > 0) {
+                const resultNode = document.querySelector('#results');
+                resultNode.innerHTML = "";
+                const listHTML = searchResult
+                                    .map(result => `<li><img class='img-thumbnail' src=${result} /></li>`)
+                                    .forEach(result => resultNode.innerHTML += result);
+            }
+        })
+        .catch(err => {
+            console.err("Error from performing search", err);
+        });
 }
 
 /**
@@ -50,7 +51,7 @@ export const search = (event) => {
  * @param searchTerm
  * @returns {Promise}
  */
-function performSearch(searchTerm = '') {
+const performSearch = (searchTerm = '') => {
     const findKeyFromStaticSearchResult = findKey(staticSearchResult, (item, index) => index === searchTerm);
     // ----------------------------------------------------------
     // since our final application uses fetch api and promises

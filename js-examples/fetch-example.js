@@ -1,3 +1,4 @@
+//Function that uses fetch and retuns a promise.
 function getStarWarsCharactersById(id) {
     var API_ENDPOINT = "https://swapi.co/api/people/" + id;
     return fetch(API_ENDPOINT)

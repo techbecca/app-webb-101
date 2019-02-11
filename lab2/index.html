@@ -56,7 +56,7 @@
     <div class="row">
         <div class="col-sm-6">
             <div class="input-group">
-                <span class="input-group-addon" id="basic-addon1">Foo bar‍</span>
+                <span class="input-group-addon" id="basic-addon1">Search‍</span>
                 <input autofocus id="animal-search" type="text" class="form-control" placeholder="Search baby animals"
                        aria-describedby="basic-addon1">
             </div>
@@ -75,19 +75,20 @@
                         <li>Oh no! Everything is broken. First, we need to get back to a working state.</li>
                         <li>We need to install some dependencies. Open lab2 root in terminal and run <code>npm install</code>.
                         <span class="question">What dependencies are installed?</span></li>
-                        <li>Let's try to run it again: <code>npm run start</code>. Things will happen. <span class="question">What?</span></li>
+                        <li>Let's try to run it again: <code>npm run start</code>. Things will happen.</li>
                         <li>Open <a href="http://localhost:8080/">http://localhost:8080/</a>.</li>
                         <li>Find our kittens.</li>
-                        <li>Delete all implementation <b>inside the function</b> <code>search.js -> performSearch</code>.
-                            <span class="text-muted">Only the content, not the entire function. :D</span></li>
+                        <li>Delete (or comment out) all implementations <b>inside the function</b> <code>search.js -> performSearch</code>.
+                            <span class="text-muted">Only the content, not the entire function. 😛</span></li>
                         <li>Delete the object <code>search.js -> staticSearchResult</code>, we're not going to use it
-                            anymore. :)</li>
+                            anymore. <span class="question">How come?</span></li>
                         <li>Make the code great again.
                             <ol>
-                                <li>Read all the comments inside <code>giphy.js</code> carefully :)</li>
+                                <li>Read all the comments inside <code>giphy.js</code> carefully 🧐</li>
                                 <li>Import giphySearch function from <code>giphy.js</code> into <code>search.js</code> using the preferred <strong>import</strong> syntax.</li>
                                 <li>Call giphySearch from the now empty performSearch function in <code>search.js</code></li>
-                                <li>Implement missing functionality in giphySearch function inside <code>giphy.js</code></li>
+                                <li>Implement missing functionality in <code>giphySearch</code> function inside <code>giphy.js</code></li>
+                                <li>Convert the search results data from giphy into desired format. <span class="text-muted">Hint: When? <code>.then()</code></span></li>
                                 <li>Live long and prosper. <span class="question">Why all of a sudden are there baboons in our search result? Not one bit cute. Not. One. Bit.</span> </li>
                                 <li>Open up the developer tools in your browser and find the "network" tools. Filter by images. <span class="question">Do you see anything familiar from the theory section?</span></li>
                             </ol>

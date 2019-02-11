@@ -26,7 +26,7 @@ const GIPHY_BASE_SEARCH_URL = 'http://api.giphy.com/v1/gifs/search?q=';
  *
  * @returns Array of Strings (the image urls)
  */
-function convertGiphyResultToImageArray(giphySearchResult = {}) {
+const convertGiphyResultToImageArray = (giphySearchResult = {}) => {
 	const { data } = giphySearchResult;
 	return data.map(img => img.images.original.url);
 }
@@ -48,18 +48,7 @@ export const giphySearch = (term = '') => {
 
 	console.log('fetching data from giphySearch module', URL_TO_FETCH_WITH);
 
-	// TODO: Use fetch api to search with given urlToFetchWith variable.
-	/*
-	SAMPLE FETCH
-	fetch(someRequestUrl)
-	.then((response) => {
-		// fetch api needs to return the content type. in this case we want JSON.
-		return response.json();
-	})
-	.then((jsonResponse) => {
-		console.log("Response from API converted to json", jsonResponse);
-		// process your JSON further...
-	});
-	*/
-	// Read more about the fetch API at https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+	// TODO - Task 9.4: Use fetch api to search with given URL_TO_FETCH_WITH variable.
+	// return fetch(...)...
+	
 };

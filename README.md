@@ -1,7 +1,7 @@
 # Introduktion till webbutveckling
 
 ## Kursinfo
-Kurs i grundläggande webbutveckling där vi kommer gå igenom fundamentala koncept som webbsidans byggblock, ramverk/tekniker, kommunikation över http, modulbaserade projektstrukturer, state-hantering, byggverktyg, moderna tekniker, och testning av JavaScript. Vad är modern webbutveckling 2017? Vilka tekniker bör jag känna till och vad gör egentligen en webbutvecklare? Det tänker vi försöka svara på!
+Kurs i grundläggande webbutveckling där vi kommer gå igenom fundamentala koncept som webbsidans byggblock, ramverk/tekniker, kommunikation över http, modulbaserade projektstrukturer, state-hantering, byggverktyg, moderna tekniker, och testning av JavaScript. Vad är modern webbutveckling 2019? Vilka tekniker bör jag känna till och vad gör egentligen en webbutvecklare? Det tänker vi försöka svara på!
 
 ## Förberedelser
 Förkunskaper Det är fördelaktigt om man installerat Node i förväg. Detta går att få tag i på https://nodejs.org/en/ eller via homebrew om du sitter på en Mac.
