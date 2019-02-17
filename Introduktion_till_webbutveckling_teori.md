@@ -11,6 +11,7 @@
 * Markup, hierarkisk struktur utan logik. Beskriver strukturen hos en webbsida. ”Substantiv” - knapp
 * DOM är en objektmodell som är hierarkisk och plattformsoberoende. Dynamisk access gör att vi kan modifiera dokumentmodellen och dess innehåll.
 * HTML5 är den nya standarden, det finns ingen anledning att använda något annat.
+* `index.html` är utgångspunkten för webben.
 * Iframe -> html-dokument inbäddat i ett annat htlm-dokument .
 
 ### CSS
@@ -37,6 +38,7 @@
 * API-anrop
 * Hanterar format som JSON, XML m.m.
 * Sessioner / Cookies - lokalt persistens i browsern
+* Interpreterat - transpileras med kompileras ej.
 
 ### Typer av JavaScript
 * ES6(+)/ES2015(+) - Använd detta! 😀
@@ -58,33 +60,36 @@
 * …vilket kan leda till kompabilitetsproblem som gör att vi måste använda oss av polyfills och vara noga med att testa av våra applikationer i flera miljöer.
 * Det finns specifika Verktyg & Plug-ins för alla browsers
 * Dom flesta browsers finns även i utvecklarversioner (Chrome Canary, Firefox developer…)
-* Chrome har gått om IE som den populäraste browsern
+* Chrome har gått om IE som den populäraste browsern.
+* Man kan använda sig av polyfills för att stärka bakåtkompabiliteten hos äldre webbläsare. 
+* Kräv alltid att få en specifikation på browserversion som din applikation ska stödja!
+* Använd caniuse.com för att se browersupport.
 
 ### User Experience
 * Det finns nära beröringspunkter mellan UX och webbutveckling.
 * Presentation är viktigt för slutanvändaren! Det finns ett stort affärsperspektiv här. 
 * Lite UX måste man kunna som webutvecklare. Sådana frågor kommer att komma från kund och det är bra att kunna delta i sådana diskussioner redan på krav-nivå. Vi kan avgöra hur svårt det är att utveckla även om det nödvändigtvis inte är vi som designar själva gränssnitten.
+* Interaktionsdesigners har ofta beteendevetarkompetens och psykologi som vi saknar som utveckare. Lita på dem!
 
-### Frontend-ramverk
+### Design-ramverk
 * Bootstrap
 * Foundation
 * Materialize
 
-#### Vad gör ett fronend-ramverk?
+#### Vad gör ett design-ramverk?
 * CSS design out-of-the-box
 * Gridbaserade strukturer
 * Responsiva gränssnitt
 * Tillhandahåller hjälpklasser & widgets
 
-### JavaScript-ramverk
+### Fronend-ramverk
 * React
 * AngularJS
-* Ember
 * Vue.js
+* Ember
 * Elm
-* Meteor
 
-#### Vad gör ett JavaScript-ramverk?
+#### Vad gör ett Fronend-ramverk?
 * Templateing
 * Databinding
 * Routing
@@ -93,9 +98,16 @@
 * React är det ramverk som har vuxit sig starkast under dom senaste åren och blivit väldigt populärt.
 * Vi kommer inte gå in mer i detalj på detta under den här kursen, det har vi inte tid med!
 
+### Node.js
+* JavaScript runtime byggd på Chromes JavaScript-motor V8.
+* Möjliggör JavaScript server side => ”Full stack” (köra på maskin istället för i browser)
+* Dom flesta webtjänster vi publicerar ligger på en nodeserver.
+* Hur stort som helst!
+
 ### CSS precompressors
 * Sass
 * Less
+* PostCSS
 * CSS med stöd för t.ex. variabler och export/import
 
 ### Linters
@@ -221,71 +233,106 @@ En tresiffrig kod som gör så att klienten kan detektera hur lyckat anropet var
 * Öppna upp terminal/kommandotolk och kör följande kommando: `curl -i https://api.github.com/users/octocat`. Här gör vi ett API-anrop mot GitHub och kan tydligt se hur responset ser ut.
 * Postman är ett bra verktyg för att testa att göra API-anrop 👍
 
-### Synkrona/asynkrona anrop
-* Synkrona anrop inväntar respons innan fortsatt exekvering.
-* Asynkrona anrop fortsätter exekveringen och använder sig ofta av en callback då responset är mottagit. 
-* JavaScript körs på en tråd vilket skapar ett behov att skriva non-blocking code. Vi vill inte blockera runtime i normalfallet.
-* Ex. på tekniker vi använder för att göra anrop: AJAX, Promises, async/await, FetchAPI.
+### Web Security Headers
+#### CSP
+* Ett säkerhetslager hos webbservern som förhindrar XSS, Code Injection m.m.
+* Vart ifrån får tillåter vi att script/css/bilder hämtas från?
+* Läggs in i en HTTP-header på webservern men kan även specas i taggen <meta>
 
-### Exempel, Promises
+#### CORS
+* Cross-Origin Resource Sharing, sätter upp regler för hur klinter utanför webserverns egen domän ska kunna nå innehållet. Försöker hämta data som ligger utanför vår egen domän.
+* En HTTP response header.
+
+#### JSONP
+Hanterar inte response på en gång, utan via en callback. Säkerhetsbrister.
+
+### Web Sockets
+* Motsvarigheten till sockets i Java.
+* 2 flavors - WS och WSS (jmf. http - https) (TLS under the hood)
+* Exempelvis en chatklient - men går också att använda för att skicka allt annat man vill. 
+* Fördelar: klienten måste inte initiera all trafik (man slipper ligga och polla)
+* Nackdelar: http har löst vissa problem som man måste trixa till själv över sockets.
+
+### Asynkron kod i JavaScript
+* Vi startar med asynkrona operationer och väntar på resultat.
+* JavaScript är singeltrådat, vilket skapar ett behov att skriva non-blocking code. (inte blockera runtime)
+* Efter den asynkrona operationen är klar så kommer en callback att triggas
+* Undvik callback hell och nästling av asynkrona operationer
 
 ```javascript
-function wazzupInTheHood() {
-	const promise = new Promise((resolve, reject) => {
-		const allGoodInTheHood = getGoodInTheHoodStatus();
-		
-		if (allGoodInTheHood) {
-			const walletContent = {
-				creditCards: ['VISA', 'AMEX', 'MastahCard'],
-				money: Infinity
-			};
-			resolve(walletContent);
-		} else {
-			reject(new Error('You outta here, fool'));
-		}
-	});
-	return promise;
-}
+setTimeout(function() {
+    console.log("This is executed once the timer is done");
+}, 3000);
 
-//Client
-wazzupInTheHood()
-	.then(wallet => buyBabyClothes(wallet))
-	.else(error => {
-		robBank();
-		console.error(`Error in the hood: ${error}`);
-	});
+console.log("This is executed right after set timeout");
 ```  
 
-Promises har 3 states:
-1. Promise pending (Du vet inte om det är good in the hood än)
-2. Promise resolved (GoodInTheHood - vi har fått ett svar tillbaka)
-3. Promise rejected (NoGoodInTheHood - vi får ett error tillbaka)
+### Promises
+* Promises är ett object som tar in en callback som argument.
+* Callbacken antingen resolva eller rejceta ett resultat.
+* Jmf kodexempel - happy path => resolve fångas i ”then”
+* Promises löser problematiken när man har flertalet promises kjedjade efter varandra. (man kan kedja ”then”)
 
-### Exempel, Fetch
+```javascript
+var promise = new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      //resolve("This is executed once the timer is done");
+      reject({ code: 500, message: "Horrible error" });
+    }, 3000);
+  });
+  
+  promise
+    .then(function(text) {
+      console.log(text);
+    })
+    .catch(function(error) {
+      console.error(error.code, error.message);
+    });
+``` 
+### Fetch
+* Fetch - ett api för att skicka HTTP-requests. Inbyggt i (dom flesta) browsers.
+* Man kan tänka på fetch som ett alternativ till ajax.
+* Fetch tar alltid emot ett promise
+* Jmf kodexempel med API-anrop till star wars-api:et
+* Alternativ: async/await, axios
 
 ```javascript
 function getStarWarsCharactersById(id) {
-	return fetch(`https://swapi.co/api/people/${id}`)
-		.then(response => response.json())
-		.then(jsonResponse => {
-			// Behandla data... 
-		})
-		.catch(error => {
-			// Behanda error...
-		});
+    var API_ENDPOINT = "https://swapi.co/api/people/" + id;
+    return fetch(API_ENDPOINT)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(data) {
+        console.log(data);
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
 }
-```
+``` 
 
-`fetch` kommer att returnera ett Promise.
+### ES6 Exempel
+Exempel, migrering.
+1. const istället för var
+2. Fat arrow syntax ersätter ”function”
+3. Template string
 
-### Content Security Policy (CSP)
-* Förhindrar XSS, Code Injection m.m.
-* En säkerhetsstandard från serverns sida, klienten har brutit mot en regel som säger att du inte är en klient som vi litar på.
-
-#### Hantera CSP
-* CORS: Cross-Origin Resource Sharing, sätter upp regler för hur klinter utanför webserverns egen domän ska kunna nå innehållet. Klienten försöker hämta data som ligger utanför dess egen domän. Servern kan här vitlista inkommande hosts.
-* Proxy: mappar klienten mot en annan address
-* JSONP. Wrappar anropet med en callback. Detta är en säkerhetsbrist, så använd inte detta! ☠️
+```javascript
+const getStarWarsCharactersById = (id) => {
+    const API_ENDPOINT = `https://swapi.co/api/people/${id}`;
+    return fetch(API_ENDPOINT)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+};
+``` 
 
 ### Moduler
 * En modul är en fil med en eller flera funktioner inuti sig som man kan göra tillgänglig i andra filer eller applikationer. Detta leder till lösare koppling. 
@@ -342,20 +389,8 @@ Moduler exporteras via named export eller default exports.
 ```
 I exempelkoden ovan så är `module-name` den lokala sökvägen till en modul vi vill importera.
 
-### Uncle Bob
-_Two classes, components or modules are coupled when at least one of them uses the other. The less these items know about each other, the looser they are coupled_
-
 ## Del 3: Den moderna webbutvecklingen
-### States
-* Vi har i den moderna webben flyttat över mycket av logiken från server side till klient side.
-* States innebär att vi håller reda på hur en parameter ter sig för tillfället och kan sedan applicera det på dom-förändringar och javascript runtime.
-* Vi prenumererar på förändringar som kan påverka vårt state som vi lyssnar på. Jämför _Observer_ och _State_ pattern från den klassiska boken ”Design Patterns”.
 
-### State Management, tekniker
-* Redux & Flux (speciellt bra om man jobbar med React)
-* RxJS (reactive programming, även applicerbart på Java)
-* VueX (om man jobbar med Vue.js)
-	
 ### Byggverktyg
 * Webpack (utan tvekan mest populärt just nu)
 * Parcel
@@ -369,29 +404,66 @@ _Two classes, components or modules are coupled when at least one of them uses t
 * Vi bundlar även css, bilder o.s.v.
 * Minifiers och uglyfiers gör så att källkoden blir oläslig. Gör detta då koden trycks ut i en produktionsmiljö!
 
-### Babel
-* En transplier som översätter JavaScript skriven i ES6 till ES5, som alla browsers kan förstå.
+### Mobile First
+* Vi bygger inte längre webben bara för desktop, utan det ska fungera för alla typer av devices.
+* Därför måste vi också anamma responsive design som stödjer alla format
+* Progressive Advancement - designa för mobil först och skala sedan uppåt.
+* I många utvecklingsländer så surfar man i första hand webben på telefoner.
 
-### Moderna koncept/features
-* Server-side-rendering
-* Progressive Web Apps (PWA)
-* Code Splitting
-* Mobile first
- 
-### Moderna verktyg
-* Hot/Live reloading
-* Lodash
-* Lighthouse (testverktyg för PWA:er)
-* Emmet
+### Search Engine Optimization (SEO)
+* Hur dyker min sida upp på google? Hur vet google vad som är viktigt?
+* Pagerank!
+* Metataggar
+* Sitespeed
+* Link relevancy
 
-### IDE vs. Text Editor
-Nu för tiden har vi bra stöd för att koda web!
-* IntelliJ
-* WebStorm
-* VSCode
-* Atom
-* Sublime
-* Vim 🤓
+### Single Page Application (SPA-appar)
+* Tidigare servades html från servern efter klientförfrågan. Varje gång man klickade på en ny länk så fick man begära ut ett dokument via GET/POST requests. Man fick då ut färdigrenderrad html. Fungerade bra då sidorna inte var så interaktiva (men hela sidan flashade om!).
+* SPA-applikationer har bara EN html-fil. Resten av renderingen och navigeringen sköts av JavaScript. Servern serverar bara JSON. Client side rendering.
+* Moderna webbplattformar är därför mer webapplikationer än hemsidor och dom är extremt JavaScript-tunga och ofta avancerade!
+* ALLA moderna JS-ramverk bygger i grunden på SPA-appar.
+
+### SSR vs. CSR
+* Server Side Rendering vs. Client Side Rendering
+* Nackdelar med SPA (CSR): det tar lång tid att ladda all JavaScript och det blir problem med SEO.
+Därför implementerar vi ofta SSR i moderna plattformar. Google måste kunna väldigt snappy ta sig igenom länkstrukturen och har inte tid att vänta på js-filer.
+* In a nutshell: rendera ut en fullt laddad html-sida från servern först => låt all javascript laddas in => client side rendering.
+* Fördelar: Vi får ut en initial render snabbt & web crawlers kan gå mot ett fullständigt dokument.
+* Det här är svårt 😬
+
+### Progressive Web Apps
+* Performance-verktyg för webapplikationer. Introducerat av Google.
+* Grundtanken är att användarupplevelsen ska vara den samma när man använder en webapplikation som när man använder en native application.
+* Kan laddas ner till hemskärmen, fungera offline och har tillgång till native features som t.ex. push-notiser.
+* Består i huvudsak av två delar: ett manifest och en service worker.
+* Service worker cache:ar statiska innehåll via browsern (Cache API).
+* Kan testas via verktyget Lighthose
+
+### Web Performance
+* En otroligt viktig del av den moderna webben!
+* Code splitting
+* Minification
+* Critical Render Path
+* CDN
+
+### Accessability
+* Webben är för alla!
+* a11y betyder att vi bygger webbapplikationer som fungerar även för personer med funktionsnedsättningar. Här är det inte bara medicinska diagnoser som menas med nedsättningar.
+* Screen readers 
+* Navigation utan pekdon.
+* Kontrast i designen (färgblind, t.ex.). 
+* Finns verktyg och plugins för att mäta a11y.
+
+### States
+* Vi har i den moderna webben flyttat över mycket av logiken från server side till klient side.
+* States innebär att vi håller reda på hur en parameter ter sig för tillfället och kan sedan applicera det på dom-förändringar och javascript runtime.
+* Vi prenumererar på förändringar som kan påverka vårt state som vi lyssnar på. Jämför _Observer_ och _State_ pattern från den klassiska boken ”Design Patterns”.
+* Kan vara API-anrop, user interactions… 
+
+### State Management, tekniker
+* Redux & Flux (speciellt bra om man jobbar med React)
+* RxJS (reactive programming, även applicerbart på Java)
+* VueX (om man jobbar med Vue.js)
 
 ### Frontend? Backend? Webb? Vad kan vi?
 * Modern webb är ett brett och spännande område!
@@ -431,15 +503,18 @@ Nu för tiden har vi bra stöd för att koda web!
 * Selenuim drivers: Local_Virtuella Maskiner_Headless (ingen grafisk output)
 * Det finns onlinetjänster som persisterar en katalog av selenumtester som gör att man kan gå in och se hur olika scenarion ser ut i olika browsermiljöer. Detta kan vara av stor nytta för t.ex. produktägare och stakeholders. Exempel på sådana tjänster är Browserstack och Saucelabs.
 
-### Användartester
-* Se till att utföra användartester regelbundet, och så gärna med en blandad målgrupp. Olika typer av feedback är otroligt viktigt då användare ofta upptäcker saker som vi utvecklare inte har tänkt på.
+### Device Testing
 * Tänk på att testa webklienter på olika typer av enheter (desktop, tablet, mobil). Vi bygger ofta gränssnitt som ska fungera vid olika skärmupplösningar, olika skärmstorlekar och olika uppkopplingar, så därför är det viktigt att man inte alltid testar sin applikation på sin utvecklarmaskin.
 
+### Användartester
+* Det är inte vi som utför användartesterna. UX-område.
+* Använd en extern, oberoende part.
+* Se till att utföra användartester regelbundet, och så gärna med en blandad målgrupp. Olika typer av feedback är otroligt viktigt då användare ofta upptäcker saker som vi utvecklare inte har tänkt på.
 
 ## Del 5: Diskussion
 ### Vart är webben på väg?
-### Vad är skillnaden på en webbutvecklare och en webbdesigner?
-### Hur lär man sig webbutveckling?
+### Vad är skillnaden på en webbapplikation och en hemsida?
+### Är programmerare rädda för webbutveckling?
 ### Tips på bra kunskapskällor!
 * [egghead.io](egghead.io)
 * [udemy.com](udemy.com)
