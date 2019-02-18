@@ -61,7 +61,7 @@ showGameOver(gameState) {
 
         const gameOverEl = document.getElementById('game-over-panel');
         const gameTimeEl = document.getElementById('game-time');
-        const noOfTriesEl = document.getElementById('no-of-tries');
+        const noOfTriesEl = document.getElementById('number-of-tries');
 
         gameTimeEl.textContent = `Time elapced: ${timeElapsed/1000} seconds`;
         noOfTriesEl.textContent = `Number of tries: ${numberOfTries}`;

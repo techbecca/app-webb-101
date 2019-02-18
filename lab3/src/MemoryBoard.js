@@ -23,9 +23,9 @@ const CARD_DICTIONARY = {
  * */
 
 class MemoryBoard {
-	constructor({ size = 4, kittenImages = kittens }, notifyActionCallback = () => {
+	constructor(size = 4, notifyActionCallback = () => {
 	}) {
-		this.kittenImages = kittenImages;
+		this.kittenImages = kittens;
 		this.notifyActionCallback = notifyActionCallback;
 		this.state = this.setupState(size);
 		this.size = size;

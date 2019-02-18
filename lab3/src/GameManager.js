@@ -22,6 +22,10 @@ class GameManager {
 		}, second);
 	}
 
+	stopGameTimer() {
+		clearInterval(this.gameTimer);
+	}
+
 	notifyAction(action) {
 		/*
 		 action structure:

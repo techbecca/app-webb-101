@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,88 +21,101 @@
 
 <body>
 
-<div class="container">
-    <div class="header clearfix">
-    <h3 class="text-muted">Labb 3</h3>
-    </div>
+    <div class="container">
+        <div class="header clearfix">
+            <h3 class="text-muted">Labb 3</h3>
+        </div>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title">📖 &nbsp; Instructions</h3>
-                </div>
-                <div class="panel-body">
-                    <ol class="instructions">
-                        <li>Run <code>npm install</code></li>
-                        <li>Run <code>npm run dev</code> and navigate to <a href="http://localhost:8080/">http://localhost:8080/</a>. <span class="text-muted">We are now loading bundle.js as our <strong>only</strong> resource.</span></li>
-                        <li>Look at the bottom of <code>index.html</code> Notice how there is only a single <code>bundle.js</code> file being used. <span class="question">How was it generated?</span></li>
-                        <li>Test your memory skillz!</li>
-                        <li>Spend a few minutes familiarizing yourself with the code <span class="question">What does GameManager and DomManager do respectively?</span></li>
-                        <li>Hmm...it seems like something is wrong with the scoreboard.</li>
-                        <li>Open up the browser developer tools and click some tiles. Observe the console output for hints on the upcoming tasks!</li>
-                        <li>Start by implementing the scoreboard logic for displaying number of tiles matched by editing <code>GameManager.js</code> <span class="question">What is the purpose of using states in this application?</span></li>
-                        <li>Did you notice that number of tries is malfunctioning as well? See if you can fix it based on your awesome solution from the previous task.</li>
-                        <li>Inside <code>DomManager.js</code>, a method called <code>showGameOver</code> is just lying around, waiting for some love. Give it to it, gently, when appropriate ❤️ 😍</li>
-                        <li>Print something in the GameOver panel based on GameManager state. Experiment! 🤓 👨🏻‍💻</li>
-                    </ol>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">📖 &nbsp; Instructions</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ol class="instructions">
+                            <li>Run <code>npm install</code></li>
+                            <li>Run <code>npm run dev</code> and navigate to <a
+                                    href="127.0.0.1:8080/">127.0.0.1:8080/</a>. <span class="text-muted">We are now
+                                    loading bundle.js as our <strong>only</strong> resource.</span></li>
+                            <li>Look at the bottom of <code>index.html</code> Notice how there is only a single
+                                <code>bundle.js</code> file being used. <span class="question">How was it
+                                    generated?</span></li>
+                            <li>Test your memory skillz!</li>
+                            <li>Spend a few minutes familiarizing yourself with the code <span class="question">What
+                                    does GameManager and DomManager do respectively?</span></li>
+                            <li>Hmm...it seems like something is wrong with the scoreboard.</li>
+                            <li>Open up the browser developer tools and click some tiles. Observe the console output for
+                                hints on the upcoming tasks!</li>
+                            <li>Start by implementing the scoreboard logic for displaying number of tiles matched by
+                                editing <code>GameManager.js</code> <span class="question">What is the purpose of using
+                                    states in this application?</span></li>
+                            <li>Did you notice that number of tries is malfunctioning as well? See if you can fix it
+                                based on your awesome solution from the previous task.</li>
+                            <li>Inside <code>DomManager.js</code>, a method called <code>showGameOver</code> is just
+                                lying around, waiting for some love. Give it to it, gently, when appropriate ❤️ 😍</li>
+                            <li>Print something in the GameOver panel based on GameManager state. Experiment! 🤓 👨🏻‍💻
+                            </li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <hr>
+        <hr>
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><span class="glyphicon glyphicon-road"></span>&nbsp; Scoreboard</h3>
-                </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-road"></span>&nbsp; Scoreboard</h3>
+                    </div>
 
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            Number of tiles matched:
-                            <span id="current-number-of-tiles-matched"><!-- numberOfTilesMatched --></span>
-                        </div>
-                        <div class="col-sm-6">
-                            Number of tries:
-                            <span id="number-of-tries">0</span>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                Number of tiles matched:
+                                <span id="current-number-of-tiles-matched">
+                                    <!-- numberOfTilesMatched --></span>
+                            </div>
+                            <div class="col-sm-6">
+                                Number of tries:
+                                <span id="number-of-tries">0</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row" id="game-over-panel">
-        <div class="col-sm-12">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title"><span class="glyphicon glyphicon-road"></span>&nbsp; GAME OVER!</h3>
-                </div>
+        <div class="row" id="game-over-panel">
+            <div class="col-sm-12">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-road"></span>&nbsp; GAME OVER!
+                        </h3>
+                    </div>
 
-                <div class="panel-body">
-                    <div class="row">
-                        <!--TODO: PUT GAME SCORE & TIMER STUFF HERE-->
+                    <div class="panel-body">
+                        <div class="row">
+                            <!--TODO: PUT GAME SCORE & TIMER STUFF HERE-->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div id="game"></div>
+        <div id="game"></div>
 
-    <hr>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title">📖 &nbsp; <code>if (timeLeft) { student.doMore(stuff); }</code></h3>
-                </div>
-                <div class="panel-body">
-              <pre>
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">📖 &nbsp; <code>if (timeLeft) { student.doMore(stuff); }</code></h3>
+                    </div>
+                    <div class="panel-body">
+                        <pre>
                 const stuff = {
                   teachersPet: {
                      startGameTimer: true,
@@ -112,13 +126,14 @@
                   isTheBarOpenAfterLabSession: true
                 };
               </pre>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</div> <!-- /container -->
+    </div> <!-- /container -->
 
-<script src="dist/bundle.js" charset="utf-8"></script>
+    <script src="dist/bundle.js" charset="utf-8"></script>
 </body>
+
 </html>
