@@ -50,5 +50,5 @@ export const giphySearch = (term = '') => {
 
 	// TODO - Task 9.4: Use fetch api to search with given URL_TO_FETCH_WITH variable.
 	// return fetch(...)...
-	
+	// use convertGiphyResultToImageArray for the response.
 };
