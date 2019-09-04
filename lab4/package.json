@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watch",
-    "test:coverage": "npm run test -- --coverage",
+    "test:coverage": "jest --watchAll --collect-coverage",
     "dev": "webpack-dev-server",
     "pack": "webpack"
   },
@@ -24,5 +24,13 @@
     "jest": "24.1.0",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ]
   }
 }
