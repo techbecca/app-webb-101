@@ -3,6 +3,9 @@
     "plugins": [
         "import"
     ],
+    "env": {
+        "jest": true
+    },
     "rules": {
         "class-methods-use-this": 0
     }
