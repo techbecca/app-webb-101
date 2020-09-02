@@ -1,37 +1,37 @@
 {
-  "name": "lab4",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest --watch",
-    "test:coverage": "jest --watchAll --collect-coverage",
-    "dev": "webpack-dev-server",
-    "pack": "webpack"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/preset-env": "^7.8.4",
-    "babel-loader": "^8.0.6",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.20.1",
-    "jest": "^25.1.0",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.2"
-  },
-  "dependencies": {
-    "jquery": "^3.5.1",
-    "lodash": "^4.17.20"
-  },
-  "jest": {
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "**/*.{js,}",
-      "!**/node_modules/**",
-      "!**/vendor/**"
-    ]
-  }
+    "name": "lab4",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --watch",
+        "test:coverage": "jest --watchAll --collect-coverage",
+        "dev": "webpack-dev-server",
+        "pack": "webpack"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/preset-env": "^7.11.5",
+        "babel-loader": "^8.1.0",
+        "eslint": "^7.8.1",
+        "eslint-config-airbnb-base": "^14.2.0",
+        "eslint-plugin-import": "^2.22.0",
+        "jest": "^26.4.2",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12",
+        "webpack-dev-server": "^3.11.0"
+    },
+    "dependencies": {
+        "jquery": "^3.5.1",
+        "lodash": "^4.17.20"
+    },
+    "jest": {
+        "collectCoverage": true,
+        "collectCoverageFrom": [
+            "**/*.{js,}",
+            "!**/node_modules/**",
+            "!**/vendor/**"
+        ]
+    }
 }
