@@ -6,21 +6,21 @@
     "scripts": {
         "test": "jest --watch",
         "test:coverage": "jest --watchAll --collect-coverage",
-        "dev": "webpack-dev-server",
+        "dev": "webpack serve",
         "pack": "webpack"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@babel/preset-env": "^7.11.5",
-        "babel-loader": "^8.1.0",
-        "eslint": "^7.8.1",
-        "eslint-config-airbnb-base": "^14.2.0",
-        "eslint-plugin-import": "^2.22.0",
-        "jest": "^26.4.2",
-        "webpack": "^4.44.1",
-        "webpack-cli": "^3.3.12",
-        "webpack-dev-server": "^3.11.0"
+        "@babel/preset-env": "^7.12.11",
+        "babel-loader": "^8.2.2",
+        "eslint": "^7.18.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-plugin-import": "^2.22.1",
+        "jest": "^26.6.3",
+        "webpack": "^5.18.0",
+        "webpack-cli": "^4.4.0",
+        "webpack-dev-server": "^3.11.2"
     },
     "dependencies": {
         "jquery": "^3.5.1",

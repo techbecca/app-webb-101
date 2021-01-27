@@ -10,16 +10,16 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@babel/core": "^7.3.3",
-        "@babel/preset-env": "^7.3.1",
-        "babel-loader": "^8.0.5",
-        "promise-polyfill": "^8.1.0",
-        "webpack": "^4.29.5",
-        "webpack-cli": "^3.2.3",
-        "webpack-dev-server": "^3.1.14"
+        "@babel/core": "^7.12.10",
+        "@babel/preset-env": "^7.12.11",
+        "babel-loader": "^8.2.2",
+        "promise-polyfill": "^8.2.0",
+        "webpack": "^5.18.0",
+        "webpack-cli": "^4.4.0",
+        "webpack-dev-server": "^3.11.2"
     },
     "dependencies": {
         "babel-polyfill": "^6.26.0",
-        "lodash": "^4.17.11"
+        "lodash": "^4.17.20"
     }
 }
