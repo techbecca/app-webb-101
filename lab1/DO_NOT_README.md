@@ -12,7 +12,7 @@
     "lib": "lib"
   },
   "dependencies": {
-    "http-server": "^0.10.0",
+    "http-server": "^13.0.2",
     "lodash": "^4.17.5"
   },
   "devDependencies": {},
