@@ -12,19 +12,19 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@babel/preset-env": "^7.12.11",
+        "@babel/preset-env": "^7.15.6",
         "babel-loader": "^8.2.2",
-        "eslint": "^7.18.0",
+        "eslint": "^7.32.0",
         "eslint-config-airbnb-base": "^14.2.1",
-        "eslint-plugin-import": "^2.22.1",
-        "jest": "^26.6.3",
-        "webpack": "^5.18.0",
-        "webpack-cli": "^4.4.0",
+        "eslint-plugin-import": "^2.24.2",
+        "jest": "^27.2.4",
+        "webpack": "^5.56.1",
+        "webpack-cli": "^4.8.0",
         "webpack-dev-server": "^3.11.2"
     },
     "dependencies": {
-        "jquery": "^3.5.1",
-        "lodash": "^4.17.20"
+        "jquery": "^3.6.0",
+        "lodash": "^4.17.21"
     },
     "jest": {
         "collectCoverage": true,
