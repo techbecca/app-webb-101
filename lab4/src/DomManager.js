@@ -2,7 +2,6 @@
  *  The module for the dom manager.
  *  You should not have to make any changes to this module in order to complete the lab.
  * */
-/* global document */
 class DomManager {
   constructor({ node, memoryBoard }) {
     this.node = node;
@@ -15,8 +14,8 @@ class DomManager {
     this.memoryBoard = newBoard;
   }
 
-    // remove everything connected to gameBoard
-    // to make room for new, improveness stuffz
+  // remove everything connected to gameBoard
+  // to make room for new, improvement of stuffz
   clearNode() {
     this.clearListeners();
     this.node.textContent = '';

@@ -2,14 +2,14 @@ import _ from 'lodash';
 import { GAME_STATE } from './gameState';
 
 export const kittens = [
-    { id: 0, url: 'http://i.giphy.com/3oriO0OEd9QIDdllqo.gif' },
-    { id: 1, url: 'http://i.giphy.com/iNMz8LF8y3g4.gif' },
-    { id: 2, url: 'http://i.giphy.com/OmK8lulOMQ9XO.gif' },
-    { id: 3, url: 'http://i.giphy.com/11s7Ke7jcNxCHS.gif' },
-    { id: 4, url: 'http://i.giphy.com/IcXFEz3QvEmpG.gif' },
-    { id: 5, url: 'http://i.giphy.com/yFQ0ywscgobJK.gif' },
-    { id: 6, url: 'http://i.giphy.com/c7kqZMtzMLpG8.gif' },
-    { id: 7, url: 'http://i.giphy.com/njtPBlbYnHAHK.gif' },
+  { id: 0, url: 'http://i.giphy.com/3oriO0OEd9QIDdllqo.gif' },
+  { id: 1, url: 'http://i.giphy.com/iNMz8LF8y3g4.gif' },
+  { id: 2, url: 'http://i.giphy.com/OmK8lulOMQ9XO.gif' },
+  { id: 3, url: 'http://i.giphy.com/11s7Ke7jcNxCHS.gif' },
+  { id: 4, url: 'http://i.giphy.com/IcXFEz3QvEmpG.gif' },
+  { id: 5, url: 'http://i.giphy.com/yFQ0ywscgobJK.gif' },
+  { id: 6, url: 'http://i.giphy.com/c7kqZMtzMLpG8.gif' },
+  { id: 7, url: 'http://i.giphy.com/njtPBlbYnHAHK.gif' },
 ];
 
 const CARD_DICTIONARY = {
@@ -23,16 +23,16 @@ const CARD_DICTIONARY = {
  *  You should not have to make any changes to this module in order to complete the lab.
  * */
 
- export const getShuffledTiles = (size, images) => {
-     if (size % 2 !== 0) {
-       throw new Error('size cannot be uneven numbers, would make up for some really terrible pairing, l0l');
-     }
-     if ((size * size) / 2 > images.length) {
-       throw new Error('insufficient kittens provided to make more cats');
-     }
-     const arr = _.range(0, Math.floor((size * size) / 2));
-     return _.shuffle([...arr, ...arr]);
- }
+export const getShuffledTiles = (size, images) => {
+  if (size % 2 !== 0) {
+    throw new Error('size cannot be uneven numbers, would make up for some really terrible pairing, l0l');
+  }
+  if ((size * size) / 2 > images.length) {
+    throw new Error('insufficient kittens provided to make more cats');
+  }
+  const arr = _.range(0, Math.floor((size * size) / 2));
+  return _.shuffle([...arr, ...arr]);
+};
 
 class MemoryBoard {
   constructor({ size = 4, kittenImages = kittens }, notifyActionCallback = () => {
@@ -49,7 +49,7 @@ class MemoryBoard {
 
   static setupState(size) {
     return _.range(0, size * size)
-            .map(() => CARD_DICTIONARY.FACE_DOWN);
+      .map(() => CARD_DICTIONARY.FACE_DOWN);
   }
 
   getCardState(cardId) {
@@ -83,7 +83,7 @@ class MemoryBoard {
         // should finish?
         /*eslint-disable */
         const isGameOver = this.state.filter(item => item === CARD_DICTIONARY.FACE_DOWN).length === 0;
-        /*eslint-enable */
+        /* eslint-enable */
         if (isGameOver) {
           this.notifyActionCallback({
             type: GAME_STATE.GAME_OVER,
@@ -91,7 +91,7 @@ class MemoryBoard {
         }
       }
     } else {
-            // user clicks a third card.
+      // user clicks a third card.
       this.notifyActionCallback({
         type: GAME_STATE.NO_MATCH,
       });
@@ -110,17 +110,16 @@ class MemoryBoard {
   }
 
   getCurrentCardIndexFacingUp() {
-    return _.findIndex(this.state, card => card === CARD_DICTIONARY.FACE_UP);
+    return _.findIndex(this.state, (card) => card === CARD_DICTIONARY.FACE_UP);
   }
 
   getNumberOfCardsFacingUp() {
-    return this.state.filter(item => item === CARD_DICTIONARY.FACE_UP).length;
+    return this.state.filter((item) => item === CARD_DICTIONARY.FACE_UP).length;
   }
 
   getKittenImage(kittenImageId = 0) {
     return kittens[kittenImageId];
   }
-
 }
 
 export default MemoryBoard;
