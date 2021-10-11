@@ -1,198 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="" />
+        <meta name="author" content="" />
 
-    <title>APP Webb Labb 2</title>
+        <title>APP Webb Labb 2</title>
 
-    <!-- Bootstrap core CSS -->
-    <link
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        rel="stylesheet"
-    />
-    <link
-        href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah"
-        rel="stylesheet"
-    />
-    <link
-        href="https://fonts.googleapis.com/css?family=Cutive+Mono"
-        rel="stylesheet"
-    />
-    <style>
-        .instructions .question {
-            color: #0e0c9b;
-            font-family: "Gloria Hallelujah", cursive;
-        }
+        <!-- Bootstrap core CSS -->
+        <link
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet" />
+        <style>
+            .instructions .question {
+                color: #0e0c9b;
+                font-family: "Gloria Hallelujah", cursive;
+            }
 
-        .instructions code {
-            font-family: "Cutive Mono", monospace;
-            background: #232323;
-            color: white;
-        }
+            .instructions code {
+                font-family: "Cutive Mono", monospace;
+                background: #232323;
+                color: white;
+            }
 
-        .lab-footer {
-            padding: 4rem 0;
-            margin-top: 4rem;
-            font-size: 85%;
-            text-align: center;
-            background-color: #f7f7f7;
-        }
+            .lab-footer {
+                padding: 4rem 0;
+                margin-top: 4rem;
+                font-size: 85%;
+                text-align: center;
+                background-color: #f7f7f7;
+            }
 
-        .lab-footer a {
-            font-weight: 500;
-            color: #464a4c;
-        }
+            .lab-footer a {
+                font-weight: 500;
+                color: #464a4c;
+            }
 
-        .lab-footer a:hover {
-            color: #0275d8;
-        }
+            .lab-footer a:hover {
+                color: #0275d8;
+            }
 
-        .lab-footer p {
-            margin-bottom: 0;
-        }
-    </style>
-</head>
+            .lab-footer p {
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
 
-<body>
-<div class="container">
-    <div class="header clearfix">
-        <h3 class="text-muted">Labb 2</h3>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="input-group">
-                <label class="input-group-addon" id="basic-addon1" for="animal-search">Search</label>
-                <input
-                    autofocus
-                    id="animal-search"
-                    type="text"
-                    class="form-control"
-                    placeholder="Search baby animals"
-                    aria-describedby="basic-addon1"
-                />
+    <body>
+        <div class="container">
+            <div class="header clearfix">
+                <h3 class="text-muted">Labb 2</h3>
             </div>
-        </div>
-    </div>
-    <hr/>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="panel panel-info instructions">
-                <div class="panel-heading">
-                    <h3 class="panel-title">📖 &nbsp; Instructions</h3>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <label class="input-group-addon" id="basic-addon1" for="animal-search"
+                            >Search</label
+                        >
+                        <input
+                            autofocus
+                            id="animal-search"
+                            type="text"
+                            class="form-control"
+                            placeholder="Search baby animals"
+                            aria-describedby="basic-addon1"
+                        />
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <ol>
-                        <li>
-                            This time we'll start with a server:
-                            <code>npm run start</code>.
-                        </li>
-                        <li>
-                            Oh no! Everything is broken. First, we need
-                            to get back to a working state.
-                        </li>
-                        <li>
-                            We need to install some dependencies. Open
-                            lab2 root in terminal and run
-                            <code>npm install</code>.
-                            <span class="question"
-                            >What dependencies are installed?</span
-                            >
-                        </li>
-                        <li>
-                            Let's try to run it again:
-                            <code>npm run start</code>. Things will
-                            happen.
-                        </li>
-                        <li>
-                            Open <a href="http://localhost:8080/">http://localhost:8080/</a>.
-                        </li>
-                        <li>Find our kittens.</li>
-                        <li>
-                            Delete (or comment out) all implementations
-                            <b>inside the function</b>
-                            <code>search.js -> performSearch</code>.
-                            <span class="text-muted">Only the content, not the entire function. 😛</span>
-                        </li>
-                        <li>
-                            Delete the object
-                            <code>search.js -> staticSearchResult</code>, we're not going to use it anymore.
-                            <span class="question">How come?</span>
-                        </li>
-                        <li>
-                            Make the code great again.
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-info instructions">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">📖 &nbsp; Instructions</h3>
+                        </div>
+                        <div class="panel-body">
                             <ol>
                                 <li>
-                                    Read all the comments inside
-                                    <code>giphy.js</code> carefully 🧐
+                                    This time we'll start with a server:
+                                    <code>npm run dev</code>.
                                 </li>
                                 <li>
-                                    Import giphySearch function from
-                                    <code>giphy.js</code> into
-                                    <code>search.js</code> using the
-                                    preferred
-                                    <strong>import</strong> syntax.
+                                    Oh no! Everything is broken. First, we need to get back to a
+                                    working state.
                                 </li>
                                 <li>
-                                    Call giphySearch from the now empty
-                                    performSearch function in
-                                    <code>search.js</code>
+                                    We need to install some dependencies. Open lab2 root in terminal
+                                    and run
+                                    <code>npm install</code>.
+                                    <span class="question">What dependencies are installed?</span>
                                 </li>
                                 <li>
-                                    Implement missing functionality in
-                                    <code>giphySearch</code> function inside <code>giphy.js</code>
+                                    Let's try to run it again:
+                                    <code>npm run dev</code>. Things will happen.
                                 </li>
                                 <li>
-                                    Convert the search results data from
-                                    giphy into desired format.
-                                    <span class="text-muted">Hint: When?<code>.then()</code></span>
+                                    Open
+                                    <a href="http://localhost:8080/">http://localhost:8080/</a>.
+                                </li>
+                                <li>Find our kittens.</li>
+                                <li>
+                                    Delete (or comment out) all implementations
+                                    <b>inside the function</b>
+                                    <code>search.js -> performSearch</code>.
+                                    <span class="text-muted"
+                                        >Only the content, not the entire function. 😛</span
+                                    >
                                 </li>
                                 <li>
-                                    Live long and prosper.
-                                    <span class="question">
-                                        Why all of a sudden are therebaboons in our search result? Not one bit cute. Not. One. Bit.
-                                    </span>
+                                    Delete the object
+                                    <code>search.js -> staticSearchResult</code>, we're not going to
+                                    use it anymore.
+                                    <span class="question">How come?</span>
                                 </li>
                                 <li>
-                                    Open up the developer tools in your browser and find the "network" tools. Filter by images.
-                                    <span class="question">
-                                        Do you see anything familiar from the theory section? Inspect the headers and response tabs in the dev tools!
-                                    </span>
+                                    Make the code great again.
+                                    <ol>
+                                        <li>
+                                            Read all the comments inside
+                                            <code>giphy.js</code> carefully 🧐
+                                        </li>
+                                        <li>
+                                            Import giphySearch function from
+                                            <code>giphy.js</code> into <code>search.js</code> using
+                                            the preferred <strong>import</strong> syntax.
+                                        </li>
+                                        <li>
+                                            Call giphySearch from the now empty performSearch
+                                            function in
+                                            <code>search.js</code>
+                                        </li>
+                                        <li>
+                                            Implement missing functionality in
+                                            <code>giphySearch</code> function inside
+                                            <code>giphy.js</code>
+                                        </li>
+                                        <li>
+                                            Convert the search results data from giphy into desired
+                                            format.
+                                            <span class="text-muted"
+                                                >Hint: When?<code>.then()</code></span
+                                            >
+                                        </li>
+                                        <li>
+                                            Live long and prosper.
+                                            <span class="question">
+                                                Why all of a sudden are therebaboons in our search
+                                                result? Not one bit cute. Not. One. Bit.
+                                            </span>
+                                        </li>
+                                        <li>
+                                            Open up the developer tools in your browser and find the
+                                            "network" tools. Filter by images.
+                                            <span class="question">
+                                                Do you see anything familiar from the theory
+                                                section? Inspect the headers and response tabs in
+                                                the dev tools!
+                                            </span>
+                                        </li>
+                                    </ol>
                                 </li>
                             </ol>
-                        </li>
-                    </ol>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <hr/>
-    <div class="row">
-        <div class="col-lg-12">
-            <div id="app">
-                <ul id="results" class="list-unstyled">
-                    <!--  -->
-                </ul>
-                <!-- THIS IS WHERE WE WILL DO AWESOME STUFF -->
-            </div>
-        </div>
-    </div>
-    <hr/>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="panel panel-info">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        📖 &nbsp; <code>if (timeLeft) { student.doMore(stuff); }</code>
-                    </h3>
+            <hr />
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="app">
+                        <ul id="results" class="list-unstyled">
+                            <!--  -->
+                        </ul>
+                        <!-- THIS IS WHERE WE WILL DO AWESOME STUFF -->
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <pre>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                📖 &nbsp;
+                                <code>if (timeLeft) { student.doMore(stuff); }</code>
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <pre>
                         var stuff = {
                           "sharingIsCaring": "The art of helping a friend. Doit.",
                           "makeNoMistake": "Implement some functionality for catching errors from fetching api data",
@@ -200,24 +203,24 @@
                           "i18n": "Koniciwa! Implement search results by language. See giphy API: https://developers.giphy.com/docs/"
                           "energize": "Stretch your back. Take a lap. Keep up the good work. Soon there will be fika! 🍩😱️"
                         };
-                    </pre>
+                    </pre
+                            >
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- /container -->
+        <!-- /container -->
 
-<footer class="lab-footer text-muted">
-    <div class="container">
-        <p>
-            Messrs Y11e, Myntjaegaren, Krakendorph and Clownbaby666,
-            Purveyors of Cringe and Aids in Coding are proud to present
-            "THE BASICS OF WEB DEVELOPMENT"
-        </p>
-    </div>
-</footer>
+        <footer class="lab-footer text-muted">
+            <div class="container">
+                <p>
+                    Messrs Y11e, Myntjaegaren, Krakendorph and Clownbaby666, Purveyors of Cringe and
+                    Aids in Coding are proud to present "THE BASICS OF WEB DEVELOPMENT"
+                </p>
+            </div>
+        </footer>
 
-<script src="dist/bundle.js" charset="utf-8"></script>
-</body>
+        <script src="dist/bundle.js" charset="utf-8"></script>
+    </body>
 </html>
