@@ -1,4 +1,5 @@
-import findKey from 'lodash/findKey';
+import findKey from "lodash/findKey";
+import { getGiphyKittens, getGiphyImages } from "./api";
 
 const staticSearchResult = {
     kitten: [
@@ -7,19 +8,43 @@ const staticSearchResult = {
         "http://i.giphy.com/OmK8lulOMQ9XO.gif",
         "http://i.giphy.com/11s7Ke7jcNxCHS.gif",
         "http://i.giphy.com/IcXFEz3QvEmpG.gif",
-        "http://i.giphy.com/yFQ0ywscgobJK.gif"
+        "http://i.giphy.com/yFQ0ywscgobJK.gif",
     ],
     puppy: [
         "http://i.giphy.com/dp7QYhsdgN2Yo.gif",
         "http://i.giphy.com/iNMz8LF8y3g4.gif",
-        "http://i.giphy.com/cdTUkj59dLFmg.gif"
+        "http://i.giphy.com/cdTUkj59dLFmg.gif",
     ],
     bunny: [
         "http://i.giphy.com/10xUg8DdgQSs9i.gif",
         "http://i.giphy.com/TT86traJyZRzq.gif",
         "http://i.giphy.com/SeM5SGt3LLKRq.gif",
-        "http://i.giphy.com/871qwDxfSemEE.gif"
-    ]
+        "http://i.giphy.com/871qwDxfSemEE.gif",
+    ],
+};
+
+/**
+ * Present search results as HTML
+ * @param searchResult
+ */
+const handleSearchSuccess = (searchResult) => {
+    if (searchResult.length > 0) {
+        const resultNode = document.querySelector("#results");
+        resultNode.innerHTML = "";
+
+        searchResult
+            .map((result) => `<li><img class='img-thumbnail' src=${result} /></li>`)
+            .forEach((result) => (resultNode.innerHTML += result));
+    }
+};
+
+/**
+ * Present search failure as HTML
+ * @param searchResult
+ */
+const handleSearchFailure = (errorMessage) => {
+    const resultNode = document.querySelector("#results");
+    resultNode.innerHTML = `<div class='error-msg'>${errorMessage}</div>`;
 };
 
 /**
@@ -30,20 +55,18 @@ const staticSearchResult = {
  */
 export const search = (event) => {
     const value = event.target.value;
-    performSearch(value)
-        .then(searchResult => {
-            if (searchResult.length > 0) {
-                const resultNode = document.querySelector('#results');
-                resultNode.innerHTML = "";
-                const listHTML = searchResult
-                                    .map(result => `<li><img class='img-thumbnail' src=${result} /></li>`)
-                                    .forEach(result => resultNode.innerHTML += result);
-            }
-        })
-        .catch(err => {
-            console.err("Error from performing search", err);
-        });
-}
+
+    if (value.length >= 3) {
+        const urlEncodedTerm = encodeURIComponent(value);
+        performSearch(urlEncodedTerm)
+            .then((searchResult) => {
+                handleSearchSuccess(searchResult);
+            })
+            .catch((err) => {
+                handleSearchFailure(err.message);
+            });
+    }
+};
 
 /**
  * This is a private function, not visible outside this module/file.
@@ -51,8 +74,11 @@ export const search = (event) => {
  * @param searchTerm
  * @returns {Promise}
  */
-const performSearch = (searchTerm = '') => {
-    const findKeyFromStaticSearchResult = findKey(staticSearchResult, (item, index) => index === searchTerm);
+const performSearch = (searchTerm = "") => {
+    const findKeyFromStaticSearchResult = findKey(
+        staticSearchResult,
+        (item, index) => index === searchTerm
+    );
     // ----------------------------------------------------------
     // since our final application uses fetch api and promises
     // we use promises here to keep the same interface for all the helper functions
@@ -62,8 +88,5 @@ const performSearch = (searchTerm = '') => {
             resolve(staticSearchResult[findKeyFromStaticSearchResult]);
         }
         resolve([]);
-    })
-}
-
-// This is the API we export.
-// What's the difference between named and unnamed exports?
+    });
+};

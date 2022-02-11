@@ -49,6 +49,20 @@
             .lab-footer p {
                 margin-bottom: 0;
             }
+
+            .error-msg {
+                text-align: center;
+                font-size: 24px;
+                color: #e0472f;
+                background-color: #f5f5f5;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            .results {
+                display: flex;
+                flex-direction: row;
+            }
         </style>
     </head>
 
@@ -96,7 +110,9 @@
                                     We need to install some dependencies. Open lab2 root in terminal
                                     and run
                                     <code>npm install</code>.
-                                    <span class="question">What dependencies are installed?</span>
+                                    <span class="question"
+                                        >Question: What dependencies are installed?</span
+                                    >
                                 </li>
                                 <li>
                                     Let's try to run it again:
@@ -119,54 +135,48 @@
                                     Delete the object
                                     <code>search.js -> staticSearchResult</code>, we're not going to
                                     use it anymore.
-                                    <span class="question">How come?</span>
+                                    <span class="question">Hard code is not hardcore</span>
                                 </li>
                                 <li>
-                                    Make the code great again.
-                                    <ol>
-                                        <li>
-                                            Read all the comments inside
-                                            <code>giphy.js</code> carefully 🧐
-                                        </li>
-                                        <li>
-                                            Import giphySearch function from
-                                            <code>giphy.js</code> into <code>search.js</code> using
-                                            the preferred <strong>import</strong> syntax.
-                                        </li>
-                                        <li>
-                                            Call giphySearch from the now empty performSearch
-                                            function in
-                                            <code>search.js</code>
-                                        </li>
-                                        <li>
-                                            Implement missing functionality in
-                                            <code>giphySearch</code> function inside
-                                            <code>giphy.js</code>
-                                        </li>
-                                        <li>
-                                            Convert the search results data from giphy into desired
-                                            format.
-                                            <span class="text-muted"
-                                                >Hint: When?<code>.then()</code></span
-                                            >
-                                        </li>
-                                        <li>
-                                            Live long and prosper.
-                                            <span class="question">
-                                                Why all of a sudden are therebaboons in our search
-                                                result? Not one bit cute. Not. One. Bit.
-                                            </span>
-                                        </li>
-                                        <li>
-                                            Open up the developer tools in your browser and find the
-                                            "network" tools. Filter by images.
-                                            <span class="question">
-                                                Do you see anything familiar from the theory
-                                                section? Inspect the headers and response tabs in
-                                                the dev tools!
-                                            </span>
-                                        </li>
-                                    </ol>
+                                    Read all the comments inside
+                                    <code>api.js</code> carefully 🧐
+                                </li>
+                                <li>
+                                    Import the <code>getGiphyKittens</code> function from
+                                    <code>api.js</code> into <code>search.js</code> using the
+                                    preferred <strong>import</strong> syntax.
+                                    <span class="question"
+                                        >Hint: is the function a named export or a defaut
+                                        export?</span
+                                    >
+                                </li>
+                                <li>
+                                    Use <code>getGiphyKittens</code> in the now empty
+                                    <code>performSearch</code>
+                                    function in
+                                    <code>search.js</code>. Try to search for kittens again.
+                                    <span class="question"
+                                        >Turns out, there are many types of kittens.</span
+                                    >
+                                </li>
+                                <li>
+                                    What happens if you search for something else?
+                                    <span class="question">Question: Why?</span>
+                                </li>
+                                <li>
+                                    Now for we want to be able to search for any gif we want.
+                                    Implement <code>getGiphyImages</code> in <code>api.js</code> and
+                                    use it instead of <code>getGiphyKittens</code> when performing a
+                                    search.
+                                </li>
+                                <li>
+                                    Open up the developer tools in your browser and find the
+                                    "network" tools. Filter by images.
+                                    <span class="question">
+                                        Question: Do you see anything familiar from the theory
+                                        section? Inspect the headers and response tabs in the dev
+                                        tools!
+                                    </span>
                                 </li>
                             </ol>
                         </div>
@@ -177,7 +187,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div id="app">
-                        <ul id="results" class="list-unstyled">
+                        <ul id="results" class="list-unstyled results">
                             <!--  -->
                         </ul>
                         <!-- THIS IS WHERE WE WILL DO AWESOME STUFF -->
@@ -197,7 +207,7 @@
                         <div class="panel-body">
                             <pre>
                         var stuff = {
-                          "sharingIsCaring": "The art of helping a friend. Doit.",
+                          "sharingIsCaring": "The art of helping a friend. Do it.",
                           "makeNoMistake": "Implement some functionality for catching errors from fetching api data",
                           "addon": "Instead of using a named import for giphySearch, try a default export!",
                           "i18n": "Koniciwa! Implement search results by language. See giphy API: https://developers.giphy.com/docs/"
