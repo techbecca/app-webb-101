@@ -9,14 +9,14 @@ function performSearch(searchTerm = "") {}
 ## Assignment 10
 
 ```javascript
-import { giphySearch } from "./giphy";
+import { getGiphyKittens } from "./api";
 ```
 
 ## Assignment 11
 
 ```javascript
 function performSearch(searchTerm = "") {
-    return giphySearch(searchTerm);
+    return getGiphyKittens(searchTerm);
 }
 ```
 
