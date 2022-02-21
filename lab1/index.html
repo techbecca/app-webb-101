@@ -1,136 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-        <title>APP Webb Labb 1</title>
+    <title>APP Webb Labb 1</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="lib/bootstrap.css" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet" />
-        <link rel="stylesheet" href="style.css" />
-    </head>
+    <!-- Bootstrap core CSS -->
+    <link href="lib/bootstrap.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Cutive+Mono"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <body>
-        <div class="container">
-            <div class="header clearfix">
-                <h3 class="text-muted">Labb 1</h3>
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <h3 class="text-muted">Labb 1</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">🕵️‍</span>
+            <input
+              autofocus
+              id="animal-search"
+              type="text"
+              class="form-control"
+              placeholder="Search baby animals"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-info instructions">
+            <div class="panel-heading">
+              <h3 class="panel-title">📖 &nbsp; Instructions</h3>
             </div>
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1">🕵️‍</span>
-                        <input
-                            autofocus
-                            id="animal-search"
-                            type="text"
-                            class="form-control"
-                            placeholder="Search baby animals"
-                            aria-describedby="basic-addon1"
-                        />
-                    </div>
+            <div class="panel-body">
+              <ol>
+                <li>Open index.html in web-browser.</li>
+                <li>
+                  Try to search for a baby animal. We think <em>kittens</em> are
+                  cute.
+                </li>
+                <li>
+                  Open the debug console in web-browser
+                  <code>cmd+alt+i / ctrl+shift+i</code> . Something is wrong...
+                </li>
+                <div class="text-muted">
+                  The request is not working since the page isn't served through
+                  a server.
+                  <span class="question"
+                    >Classroom question: Why does this matter?</span
+                  >
                 </div>
+                <li>
+                  Install <a href="https://nodejs.org/en/">Node</a> if you
+                  haven't already. It's even better to install through Homebrew
+                  if you're on OSX. Windows users have to use the webpage.
+                </li>
+                <li>Time to get up and running with a development server!</li>
+                <ol>
+                  <li>
+                    First order of business is to run (in lab1 root)
+                    <code>npm init</code>. Press enter through all the steps to
+                    accept the default values.
+                  </li>
+                  <li>
+                    Familiarize yourself with the <code>package.json</code> file
+                    and find the scripts section.
+                  </li>
+                  <li>
+                    Run <code>npm install --save-dev http-server</code> to add a
+                    simple development server as a development dependency.
+                    <span class="question"
+                      >Classroom question: What is the difference between
+                      development dependencies and regular ones?</span
+                    >
+                  </li>
+                  <li>
+                    To start our server we may want to add a new npm script.
+                    Create a new key/value pair in package.json in the scripts
+                    section, <code>"start": "http-server"</code>
+                  </li>
+                  <li>
+                    Start the development server by running our shiny new
+                    script: <code>npm run start</code> in the terminal
+                  </li>
+                  <li>
+                    Go to
+                    <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a>
+                  </li>
+                  <li>Verify that the search is working. I can haz kittens?</li>
+                  <li>
+                    Familiarize yourself with <code>index.html.</code> and
+                    <code>index.js</code>
+                  </li>
+                  <li>
+                    Can you find in the HTML markup where kitten images loaded?
+                    <span class="question">Classroom question: And how?</span>
+                  </li>
+                </ol>
+              </ol>
             </div>
-            <hr />
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="panel panel-info instructions">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">📖 &nbsp; Instructions</h3>
-                        </div>
-                        <div class="panel-body">
-                            <ol>
-                                <li>Open index.html in web-browser.</li>
-                                <li>
-                                    Try to search for a baby animal. We think <em>kittens</em> are
-                                    cute.
-                                </li>
-                                <li>
-                                    Open the debug console in web-browser
-                                    <code>cmd+alt+i / ctrl+shift+i</code> . Something is wrong...
-                                </li>
-                                <div class="text-muted">
-                                    The request is not working since the page isn't served through a
-                                    server. <span class="question">Why does this matter?</span>
-                                </div>
-                                <li>
-                                    Install <a href="https://nodejs.org/en/">Node</a> if you haven't
-                                    already. It's even better to install through Homebrew if you're
-                                    on OSX. Windows users have to use the webpage.
-                                </li>
-                                <li>Time to get up and running with a development server!</li>
-                                <ol>
-                                    <li>
-                                        First order of business is to run (in lab1 root)
-                                        <code>npm init</code>. Press enter through all the steps to
-                                        accept the default values.
-                                    </li>
-                                    <li>
-                                        Familiarize yourself with the <code>package.json</code> file
-                                        and find the scripts section.
-                                    </li>
-                                    <li>
-                                        Run <code>npm install --save-dev http-server</code> to add a
-                                        simple development server as a development dependency.
-                                        <span class="question"
-                                            >What is the difference between development dependencies
-                                            and regular ones?</span
-                                        >
-                                    </li>
-                                    <li>
-                                        To start our server we may want to add a new npm script.
-                                        Create a new key/value pair in package.json in the scripts
-                                        section, <code>"start": "http-server"</code>
-                                    </li>
-                                    <li>
-                                        Start the development server by running our shiny new
-                                        script: <code>npm run start</code> in the terminal
-                                    </li>
-                                    <li>
-                                        Go to
-                                        <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a>
-                                    </li>
-                                    <li>Verify that the search is working. I can haz kittens?</li>
-                                    <li>
-                                        Familiarize yourself with <code>index.html.</code> and
-                                        <code>index.js</code>
-                                    </li>
-                                    <li>
-                                        Can you find in the markup where kitten images loaded?
-                                        <span class="question">And how?</span>
-                                    </li>
-                                </ol>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-lg-12">
+          <ul id="results" class="list-unstyled">
+            <!-- placeholder for list items, created with jQuery -->
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">
+                📖 &nbsp; <code>if (timeLeft) { student.doMore(stuff); }</code>
+              </h3>
             </div>
-            <hr />
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul id="results" class="list-unstyled">
-                        <!-- placeholder for list items, created with jQuery -->
-                    </ul>
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">
-                                📖 &nbsp; <code>if (timeLeft) { student.doMore(stuff); }</code>
-                            </h3>
-                        </div>
-                        <div class="panel-body">
-                            <pre>
+            <div class="panel-body">
+              <pre>
                 var stuff = {
                   1: 'Install lodash (hint: npm is nice. Also, look how jquery is referenced)',
                   2: 'Add search support for baboons. For instance, this ugly sonofabitch: https://media.giphy.com/media/pFwRzOLfuGHok/giphy.gif'
@@ -138,25 +147,25 @@
                   4: 'Play around with jQuery Effect Methods',
                   5: 'Get coffee, you're in for a bumpy ride, friend'
                 };
-              </pre
-                            >
-                        </div>
-                    </div>
-                </div>
+              </pre>
             </div>
+          </div>
         </div>
-        <!-- /container -->
+      </div>
+    </div>
+    <!-- /container -->
 
-        <footer class="lab-footer text-muted">
-            <div class="container">
-                <p>
-                    Messrs Y11e, Myntjaegaren, Krakendorph and Clownbaby666, Purveyors of Cringe and
-                    Aids in Coding are proud to present "THE BASICS OF WEB DEVELOPMENT"
-                </p>
-            </div>
-        </footer>
+    <footer class="lab-footer text-muted">
+      <div class="container">
+        <p>
+          Messrs Y11e, Myntjaegaren, Krakendorph and Clownbaby666, Purveyors of
+          Cringe and Aids in Coding are proud to present "THE BASICS OF WEB
+          DEVELOPMENT"
+        </p>
+      </div>
+    </footer>
 
-        <script src="lib/jquery-3.1.1.js" charset="utf-8"></script>
-        <script src="index.js" charset="utf-8"></script>
-    </body>
+    <script src="lib/jquery-3.1.1.js" charset="utf-8"></script>
+    <script src="index.js" charset="utf-8"></script>
+  </body>
 </html>
