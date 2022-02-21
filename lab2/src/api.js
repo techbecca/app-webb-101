@@ -11,8 +11,8 @@
  * @returns Array of Strings (the image urls)
  */
 const convertGiphyResultToImageArray = (giphySearchResult = {}) => {
-    const { data } = giphySearchResult;
-    return data.map((img) => img.images.original.url).slice(0, 4);
+  const { data } = giphySearchResult;
+  return data.map((img) => img.images.original.url).slice(0, 4);
 };
 
 /**
@@ -27,18 +27,20 @@ const GIPHY_BASE_SEARCH_URL = "http://api.giphy.com/v1/gifs/search";
  * @returns {Promise}
  */
 export const getGiphyKittens = (searchTerm = "") => {
-    const URL_TO_FETCH_WITH = `${GIPHY_BASE_SEARCH_URL}?q=kitten&limit=4&api_key=${GIPHY_API_KEY}`;
+  const URL_TO_FETCH_WITH = `${GIPHY_BASE_SEARCH_URL}?q=kitten&limit=4&api_key=${GIPHY_API_KEY}`;
 
-    if (searchTerm === "kitten" || "kittens") {
-        return fetch(URL_TO_FETCH_WITH)
-            .then((result) => result.json())
-            .then((data) => convertGiphyResultToImageArray(data))
-            .catch((error) => console.error(`Error from fetching giphy images: ${error}`));
-    } else {
-        return new Promise((resolve, reject) =>
-            reject(new Error(`A ${searchTerm} is not a kitten, stupid! 🤦‍♂️`))
-        );
-    }
+  if (searchTerm === "kitten" || searchTerm === "kittens") {
+    return fetch(URL_TO_FETCH_WITH)
+      .then((result) => result.json())
+      .then((data) => convertGiphyResultToImageArray(data))
+      .catch((error) =>
+        console.error(`Error from fetching giphy images: ${error}`)
+      );
+  } else {
+    return new Promise((resolve, reject) =>
+      reject(new Error(`A ${searchTerm} is not a kitten, stupid! 🤦‍♂️`))
+    );
+  }
 };
 
 /**
