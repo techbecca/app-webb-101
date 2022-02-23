@@ -49,4 +49,25 @@ export const getGiphyKittens = (searchTerm = "") => {
  * @param term The search term. E.g 'puppy'
  * @returns {Promise}
  */
-export const getGiphyImages = (searchTerm = "") => {};
+export default async (searchTerm = "") => {
+  const URL_TO_FETCH_WITH = `${GIPHY_BASE_SEARCH_URL}?q=${searchTerm}&limit=4&api_key=${GIPHY_API_KEY}`;
+  
+  try {
+    const result = await fetch(URL_TO_FETCH_WITH);
+    const data = await result.json();
+    return convertGiphyResultToImageArray(data);
+  } catch (error) {
+    return console.error(`Error from fetching giphy images: ${error}`);
+  }
+};
+
+// export default (searchTerm = "") => {
+//   const URL_TO_FETCH_WITH = `${GIPHY_BASE_SEARCH_URL}?q=${searchTerm}&limit=4&api_key=${GIPHY_API_KEY}`;
+  
+//   return fetch(URL_TO_FETCH_WITH)
+//       .then((result) => result.json())
+//       .then((data) => convertGiphyResultToImageArray(data))
+//       .catch((error) =>
+//         console.error(`Error from fetching giphy images: ${error}`)
+//       );
+// };

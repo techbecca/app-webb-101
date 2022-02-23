@@ -1,27 +1,5 @@
 import findKey from "lodash/findKey";
-import { getGiphyKittens, getGiphyImages } from "./api";
-
-const staticSearchResult = {
-    kitten: [
-        "http://i.giphy.com/3oriO0OEd9QIDdllqo.gif",
-        "http://i.giphy.com/iNMz8LF8y3g4.gif",
-        "http://i.giphy.com/OmK8lulOMQ9XO.gif",
-        "http://i.giphy.com/11s7Ke7jcNxCHS.gif",
-        "http://i.giphy.com/IcXFEz3QvEmpG.gif",
-        "http://i.giphy.com/yFQ0ywscgobJK.gif",
-    ],
-    puppy: [
-        "http://i.giphy.com/dp7QYhsdgN2Yo.gif",
-        "http://i.giphy.com/iNMz8LF8y3g4.gif",
-        "http://i.giphy.com/cdTUkj59dLFmg.gif",
-    ],
-    bunny: [
-        "http://i.giphy.com/10xUg8DdgQSs9i.gif",
-        "http://i.giphy.com/TT86traJyZRzq.gif",
-        "http://i.giphy.com/SeM5SGt3LLKRq.gif",
-        "http://i.giphy.com/871qwDxfSemEE.gif",
-    ],
-};
+import getGiphyImages, { getGiphyKittens } from "./api";
 
 /**
  * Present search results as HTML
@@ -75,18 +53,5 @@ export const search = (event) => {
  * @returns {Promise}
  */
 const performSearch = (searchTerm = "") => {
-    const findKeyFromStaticSearchResult = findKey(
-        staticSearchResult,
-        (item, index) => index === searchTerm
-    );
-    // ----------------------------------------------------------
-    // since our final application uses fetch api and promises
-    // we use promises here to keep the same interface for all the helper functions
-    // ----------------------------------------------------------
-    return new Promise((resolve, reject) => {
-        if (findKeyFromStaticSearchResult) {
-            resolve(staticSearchResult[findKeyFromStaticSearchResult]);
-        }
-        resolve([]);
-    });
+    return getGiphyImages(searchTerm);
 };

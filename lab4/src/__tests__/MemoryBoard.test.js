@@ -100,7 +100,7 @@ describe("getKittenImage(id)", () => {
       kittenImages: generateKittens(8),
     });
     // when
-    const theKitten = null; // TODO: const theKitten = board.getKittenImage(kittenI...
+    const theKitten = board.getKittenImage(kittenId);
     // then
     expect(theKitten).toEqual(kittens[kittenId]);
   });
@@ -113,24 +113,23 @@ describe("getCardState(cardId)", () => {
 
   it("should return an unflipped card when the board is created", () => {
     // given
-    // const board = new MemoryBoard(...);
+    const board = new MemoryBoard(4);
     // when
-    // const actual = board.getCardState(...);
+    const actual = board.getCardState(3);
     // then
-    // expect(actual).toEqual(unflippedCard);
-    expect(true).toEqual(false);
+    expect(actual).toEqual(unflippedCard);
   });
 
   it("should return a flipped card when the card has been clicked", () => {
     // given
-    // const board = ...
+    const board = new MemoryBoard(4);
     // when
     // clicking on card with given cardId...
-    // board.handleClicked(cardId);
-    // const actual = board.getCardState(...);
+    board.handleClicked(cardId);
+    const actual = board.getCardState(cardId);
     // then
-    // expect(actual).toEqual(flippedCard);
-    expect(true).toEqual(false);
+    expect(actual).toEqual(flippedCard);
+    // expect(true).toEqual(false);
   });
 });
 

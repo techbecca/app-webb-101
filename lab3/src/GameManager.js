@@ -36,6 +36,19 @@ class GameManager {
 		 */
 		console.log(action.type, action);
 		// TODO: your implementation of step 8 & 9 COULD go here. ;)
+		switch(action.type) {
+			case GAME_STATE.SOLVED:
+				this.state.numberOfTilesMatched += 1;
+				this.domManager.setNumberOfTilesMatched(this.state.numberOfTilesMatched);
+				break;
+		}
+
+		this.domManager.setNumberOfTries(++this.state.numberOfTries);
+
+		if (this.state.numberOfTries >= 12) {
+			this.domManager.showGameOver();
+		}
+
 	}
 
 }
